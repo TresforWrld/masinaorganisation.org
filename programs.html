@@ -4,135 +4,173 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Programs – Masina Organization</title>
-<link rel="icon" href="https://i.imgur.com/KwAnxWI.png" />
-<meta property="og:image" content="https://i.imgur.com/KwAnxWI.png" />
+<meta name="description" content="Masina Organization's five core programs: Freedom of Expression, Anti-Police Brutality, Youth Civic Leadership, Community Peace, and Mental Wellness for activists." />
+<link rel="icon" href="https://i.imgur.com/SoKIWX6.png" />
+<meta property="og:title" content="Programs – Masina Organization" />
+<meta property="og:image" content="https://i.imgur.com/bS3vP0N.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root { --green:#1a7a3c; --green-mid:#25a355; --green-light:#3fcf78; --green-pale:#e6f7ed; --white:#fff; --off-white:#f5fbf7; --text-dark:#0d2918; --shadow:0 8px 32px rgba(26,122,60,0.13); }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
+:root{--green:#1a7a3c;--green-mid:#25a355;--green-light:#3fcf78;--green-pale:#e6f7ed;--off-white:#f5fbf7;--text-dark:#0d2918;--text-mid:#2d5a3d;--shadow:0 8px 32px rgba(26,122,60,0.13);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
 
-  nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:70px;background:rgba(255,255,255,0.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.35);box-shadow:0 2px 24px rgba(26,122,60,0.08);}
-  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .nav-logo img{height:44px;}
-  .nav-logo span{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green);font-weight:700;}
-  .nav-links{display:flex;gap:2rem;list-style:none;}
-  .nav-links a{text-decoration:none;color:var(--text-dark);font-size:0.92rem;font-weight:500;position:relative;transition:color 0.25s;}
-  .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--green-light);border-radius:2px;transition:width 0.3s;}
-  .nav-links a:hover{color:var(--green);}
-  .nav-links a:hover::after{width:100%;}
-  .nav-cta{background:var(--green);color:#fff!important;padding:8px 20px;border-radius:30px;transition:background 0.25s!important;}
-  .nav-cta::after{display:none!important;}
-  .nav-cta:hover{background:var(--green-mid)!important;}
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
-  .hamburger span{display:block;width:26px;height:2.5px;background:var(--green);border-radius:2px;transition:all 0.35s;}
-  .mobile-menu{display:none;position:fixed;top:70px;left:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.35);z-index:999;padding:1.5rem 5% 2rem;flex-direction:column;}
-  .mobile-menu.open{display:flex;}
-  .mobile-menu-item{overflow:hidden;}
-  .mobile-menu-item a{display:block;padding:0.75rem 0;text-decoration:none;color:var(--text-dark);font-size:1.05rem;font-weight:500;border-bottom:1px solid #e8f4ec;transform:translateX(-40px);opacity:0;transition:color 0.2s;}
-  .mobile-menu.open .mobile-menu-item a{animation:rollIn 0.45s forwards;}
-  .mobile-menu.open .mobile-menu-item:nth-child(1) a{animation-delay:0.05s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(2) a{animation-delay:0.12s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(3) a{animation-delay:0.19s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(4) a{animation-delay:0.26s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(5) a{animation-delay:0.33s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(6) a{animation-delay:0.4s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(7) a{animation-delay:0.47s;}
-  @keyframes rollIn{0%{transform:translateX(-40px) rotateY(-20deg);opacity:0;}60%{transform:translateX(6px) rotateY(2deg);opacity:1;}100%{transform:translateX(0) rotateY(0);opacity:1;}}
+/* NAV – identical to index */
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:80px;background:rgba(255,255,255,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(26,122,60,0.10);box-shadow:0 2px 24px rgba(26,122,60,0.07);}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-brand img{height:72px;width:auto;}
+.nav-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:700;color:var(--green);letter-spacing:-.01em;line-height:1;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text-dark);font-size:0.9rem;font-weight:500;position:relative;transition:color .25s;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--green-light);border-radius:2px;transition:width .3s;}
+.nav-links a:hover{color:var(--green);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--green)!important;color:#fff!important;padding:8px 22px;border-radius:30px;font-weight:600!important;box-shadow:0 3px 14px rgba(26,122,60,0.28);}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{background:var(--green-mid)!important;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;align-items:flex-start;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+.hamburger span{display:block;height:2.5px;background:var(--green);border-radius:2px;transition:all .35s;}
+.hamburger span:nth-child(1){width:26px;}
+.hamburger span:nth-child(2){width:16px;}
+.hamburger span:nth-child(3){width:26px;}
+.mobile-menu{display:none;position:fixed;top:80px;left:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(26,122,60,0.08);z-index:999;padding:1.5rem 5% 2rem;flex-direction:column;}
+.mobile-menu.open{display:flex;}
+.mobile-menu-item a{display:block;padding:.78rem 0;text-decoration:none;color:var(--text-dark);font-size:1.05rem;font-weight:500;border-bottom:1px solid #e8f4ec;transform:translateX(-40px);opacity:0;transition:color .2s;}
+.mobile-menu.open .mobile-menu-item a{animation:rollIn .45s forwards;}
+.mobile-menu.open .mobile-menu-item:nth-child(1) a{animation-delay:.05s;}
+.mobile-menu.open .mobile-menu-item:nth-child(2) a{animation-delay:.12s;}
+.mobile-menu.open .mobile-menu-item:nth-child(3) a{animation-delay:.19s;}
+.mobile-menu.open .mobile-menu-item:nth-child(4) a{animation-delay:.26s;}
+.mobile-menu.open .mobile-menu-item:nth-child(5) a{animation-delay:.33s;}
+.mobile-menu.open .mobile-menu-item:nth-child(6) a{animation-delay:.40s;}
+.mobile-menu.open .mobile-menu-item:nth-child(7) a{animation-delay:.47s;}
+@keyframes rollIn{0%{transform:translateX(-40px) rotateY(-20deg);opacity:0;}60%{transform:translateX(6px) rotateY(2deg);opacity:1;}100%{transform:translateX(0) rotateY(0);opacity:1;}}
 
-  /* HERO */
-  .hero{height:60vh;min-height:420px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:linear-gradient(135deg,#0d2918 0%,#25a355 70%,#3fcf78 100%);margin-top:70px;}
-  .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 60% at 75% 40%,rgba(255,255,255,0.07) 0%,transparent 65%),radial-gradient(ellipse 35% 50% at 20% 70%,rgba(63,207,120,0.15) 0%,transparent 60%);}
-  .hero-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,1) 39px,rgba(255,255,255,1) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,1) 39px,rgba(255,255,255,1) 40px);}
-  .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5% 60px;width:100%;}
-  .hero-breadcrumb{color:rgba(255,255,255,0.55);font-size:0.8rem;margin-bottom:1rem;}
-  .hero-breadcrumb a{color:rgba(255,255,255,0.55);text-decoration:none;}
-  .hero-breadcrumb span{color:var(--green-light);}
-  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);color:#fff;font-weight:900;line-height:1.1;animation:fadeUp 0.9s 0.1s both;}
-  .hero-title em{color:var(--green-light);font-style:normal;}
-  .hero-sub{color:rgba(255,255,255,0.75);font-size:1rem;max-width:520px;margin-top:1rem;line-height:1.7;animation:fadeUp 0.9s 0.3s both;}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+/* HERO – same media as index */
+.hero{position:relative;min-height:65vh;display:flex;align-items:center;margin-top:80px;overflow:hidden;}
+.hero-img{position:absolute;inset:0;background:url('https://i.imgur.com/faIrFFO.jpeg') center/cover no-repeat;z-index:0;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,22,14,0.82) 0%,rgba(15,50,28,0.68) 50%,rgba(7,22,14,0.48) 100%);}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5%;width:100%;}
+.hero-text{color:#fff;max-width:660px;padding:2rem 0 4rem;}
+.hero-breadcrumb{color:rgba(255,255,255,0.65);font-size:0.85rem;margin-bottom:1rem;animation:fadeUp .8s .1s both;}
+.hero-breadcrumb a{color:rgba(255,255,255,0.65);text-decoration:none;}
+.hero-breadcrumb span{color:var(--green-light);}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,4.2rem);line-height:1.08;font-weight:700;margin-bottom:1rem;letter-spacing:-.01em;animation:fadeUp .8s .25s both;}
+.hero-title em{color:var(--green-light);font-style:italic;}
+.hero-sub{font-size:1.05rem;line-height:1.75;color:rgba(255,255,255,0.8);margin-bottom:0;font-weight:300;max-width:580px;animation:fadeUp .8s .4s both;}
+.hero-wave{position:absolute;bottom:-2px;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;}
+.hero-wave svg{display:block;width:100%;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 
-  /* TABS */
-  .tabs-bar{background:#fff;border-bottom:2px solid var(--green-pale);position:sticky;top:70px;z-index:100;padding:0 5%;}
-  .tabs-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
-  .tab-btn{background:none;border:none;padding:18px 22px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;color:#888;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:color 0.25s,border-color 0.25s;}
-  .tab-btn.active,.tab-btn:hover{color:var(--green);border-bottom-color:var(--green);}
+/* TABS BAR */
+.tabs-bar{background:#fff;border-bottom:2px solid var(--green-pale);position:sticky;top:80px;z-index:100;padding:0 5%;}
+.tabs-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
+.tab-btn{background:none;border:none;padding:18px 24px;font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:600;color:#7b8e82;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:color 0.25s,border-color 0.25s;}
+.tab-btn.active,.tab-btn:hover{color:var(--green);border-bottom-color:var(--green);}
 
-  /* PROGRAMS */
-  .programs-section{padding:80px 5%;max-width:1400px;margin:0 auto;}
-  .program-block{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid rgba(26,122,60,0.08);}
-  .program-block:last-child{border-bottom:none;}
-  .program-block.reverse{direction:rtl;}
-  .program-block.reverse > * {direction:ltr;}
-  .prog-visual{background:linear-gradient(135deg,var(--green-pale) 0%,#c8edd8 100%);border-radius:24px;height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-  .prog-visual-icon{width:100px;height:100px;background:rgba(26,122,60,0.12);border-radius:28px;display:flex;align-items:center;justify-content:center;}
-  .prog-visual-icon svg{width:52px;height:52px;fill:var(--green);opacity:0.7;}
-  .prog-num{position:absolute;top:20px;left:24px;font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:rgba(26,122,60,0.1);line-height:1;}
-  .program-tag{display:inline-block;background:var(--green-pale);color:var(--green);font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:1rem;}
-  .program-title{font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:1rem;line-height:1.2;}
-  .program-desc{font-size:0.93rem;line-height:1.8;color:#5a7a66;margin-bottom:1.5rem;}
-  .activities-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
-  .activities-list li{display:flex;align-items:center;gap:10px;font-size:0.87rem;color:#3a5a47;}
-  .activities-list li::before{content:'';display:block;width:8px;height:8px;border-radius:50%;background:var(--green-light);flex-shrink:0;}
+/* SECTION LABELS + TITLES */
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:0.73rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem;}
+.section-label::before{content:'';display:block;width:24px;height:2px;background:var(--green-light);border-radius:2px;}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,2.9rem);line-height:1.18;margin-bottom:1rem;font-weight:700;}
+h2.section-title em{color:var(--green);font-style:italic;}
 
-  /* WORKSHOPS */
-  .workshops-section{background:none;padding:80px 5%;max-width:1400px;margin:0 auto;}
-  .workshops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
-  .workshop-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 10px rgba(26,122,60,0.05);transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;}
-  .workshop-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--green-light));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
-  .workshop-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(26,122,60,0.12);}
-  .workshop-card:hover::after{transform:scaleX(1);}
-  .ws-icon{font-size:2rem;margin-bottom:1rem;}
-  .workshop-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:0.6rem;}
-  .workshop-card p{font-size:0.85rem;color:#5a7a66;line-height:1.7;}
+/* PROGRAMS SECTION (five program blocks) */
+.programs-section{padding:80px 5%;max-width:1400px;margin:0 auto;}
+.program-block{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid rgba(26,122,60,0.08);}
+.program-block:last-child{border-bottom:none;}
+.program-block.reverse{direction:rtl;}
+.program-block.reverse > *{direction:ltr;}
+.prog-visual{background:linear-gradient(135deg,var(--green-pale) 0%,#c8edd8 100%);border-radius:28px;height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.prog-visual-icon{width:100px;height:100px;background:rgba(26,122,60,0.12);border-radius:28px;display:flex;align-items:center;justify-content:center;}
+.prog-visual-icon svg{width:52px;height:52px;fill:var(--green);opacity:0.8;}
+.prog-num{position:absolute;top:20px;left:24px;font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:900;color:rgba(26,122,60,0.12);line-height:1;}
+.program-tag{display:inline-block;background:var(--green-pale);color:var(--green);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 16px;border-radius:30px;margin-bottom:1rem;}
+.program-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1rem;line-height:1.2;color:var(--text-dark);}
+.program-desc{font-size:0.93rem;line-height:1.8;color:#5a7a66;margin-bottom:1.5rem;font-weight:300;}
+.activities-list{list-style:none;display:flex;flex-direction:column;gap:0.7rem;}
+.activities-list li{display:flex;align-items:center;gap:10px;font-size:0.87rem;color:#3a5a47;}
+.activities-list li::before{content:'';display:block;width:8px;height:8px;border-radius:50%;background:var(--green-light);flex-shrink:0;}
 
-  /* SECTION LABEL */
-  .section-label{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.7rem;}
-  .section-label::before{content:'';display:block;width:24px;height:2px;background:var(--green-light);border-radius:2px;}
-  h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin-bottom:1rem;}
-  h2.section-title em{color:var(--green);font-style:normal;}
+/* WORKSHOPS GRID */
+.workshops-section{padding:80px 5%;max-width:1400px;margin:0 auto;}
+.workshops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.workshop-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 12px rgba(26,122,60,0.06);transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;}
+.workshop-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--green-light));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.workshop-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(26,122,60,0.12);}
+.workshop-card:hover::after{transform:scaleX(1);}
+.ws-icon{font-size:2.2rem;margin-bottom:1rem;}
+.workshop-card h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-bottom:0.6rem;color:var(--text-dark);}
+.workshop-card p{font-size:0.86rem;color:#5a7a66;line-height:1.7;font-weight:300;}
 
-  /* FOOTER */
-  footer{background:#071510;color:rgba(255,255,255,0.75);padding:60px 5% 0;max-width:none;}
-  .footer-inner{max-width:1200px;margin:0 auto;}
-  .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
-  .footer-brand img{height:50px;margin-bottom:1rem;}
-  .footer-motto{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--green-light);margin:0.5rem 0 1rem;font-style:italic;}
-  .footer-brand p{font-size:0.85rem;line-height:1.75;color:rgba(255,255,255,0.55);}
-  .footer-col h4{font-size:0.82rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.2rem;}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
-  .footer-col ul a{text-decoration:none;color:rgba(255,255,255,0.65);font-size:0.88rem;transition:color 0.2s;}
-  .footer-col ul a:hover{color:var(--green-light);}
-  .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:24px 0;font-size:0.8rem;color:rgba(255,255,255,0.35);}
-  .footer-bottom a{color:var(--green-light);text-decoration:none;}
+/* ACTIVITIES GRID */
+.activities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem;}
+.act-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);transition:transform .3s,box-shadow .3s;}
+.act-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,122,60,0.1);}
+.act-card h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:0.8rem;}
+.act-card p{font-size:0.88rem;line-height:1.75;color:#5a7a66;font-weight:300;}
+.act-highlight{background:var(--green);border-color:transparent;}
+.act-highlight h3{color:#fff;}
+.act-highlight p{color:rgba(255,255,255,0.82);}
 
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s,transform 0.7s;}
-  .reveal.visible{opacity:1;transform:none;}
+/* FOOTER – identical to index */
+footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-width:none;overflow:hidden;}
+.footer-bg{position:absolute;inset:0;z-index:0;background:url('https://i.imgur.com/LgVCkJ1.jpeg') center/cover no-repeat;}
+.footer-bg::after{content:'';position:absolute;inset:0;background:rgba(5,14,9,0.88);}
+.footer-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr;gap:4rem;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand img{height:104px;width:auto;margin-bottom:1rem;}
+.footer-motto{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--green-light);margin:.5rem 0 1rem;font-style:italic;}
+.footer-brand p{font-size:0.85rem;line-height:1.78;color:rgba(255,255,255,0.48);font-weight:300;}
+.footer-col h4{font-size:0.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:1.2rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem;}
+.footer-col ul a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:0.87rem;transition:color .2s;font-weight:300;}
+.footer-col ul a:hover{color:var(--green-light);}
+.footer-bottom{padding:24px 0;font-size:0.78rem;color:rgba(255,255,255,0.3);}
+.footer-bottom-email{margin-bottom:8px;}
+.footer-bottom-email a{color:var(--green-light);text-decoration:none;font-size:0.82rem;}
+.footer-bottom-copy{color:rgba(255,255,255,0.28);}
 
-  @media(max-width:900px){
-    .nav-links{display:none;} .hamburger{display:flex;}
-    .program-block{grid-template-columns:1fr;} .program-block.reverse{direction:ltr;}
-    .workshops-grid{grid-template-columns:1fr 1fr;}
-    .footer-top{grid-template-columns:1fr 1fr;}
-  }
-  @media(max-width:600px){.workshops-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s;}
+.reveal.visible{opacity:1;transform:none;}
+
+@media(max-width:960px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .program-block{grid-template-columns:1fr;gap:2rem;}.program-block.reverse{direction:ltr;}
+  .workshops-grid{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .activities-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .workshops-grid{grid-template-columns:1fr;}
+  .hero-title{font-size:2.4rem;}
+  .tabs-inner{gap:0.2rem;}
+  .tab-btn{padding:14px 16px;font-size:0.8rem;}
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo"><img src="https://i.imgur.com/KwAnxWI.png" alt="Masina" /><span>Masina Organization</span></a>
+  <a href="index.html" class="nav-brand">
+    <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization"/>
+    <span class="nav-brand-name">Masina Organization</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="programs.html">Programs</a></li><li><a href="campaigns.html">Campaigns</a></li>
-    <li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="campaigns.html">Campaigns</a></li>
+    <li><a href="volunteer.html">Volunteer</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="donate.html" class="nav-cta">Donate</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-item"><a href="index.html">Home</a></div>
   <div class="mobile-menu-item"><a href="about.html">About Us</a></div>
@@ -143,18 +181,24 @@
   <div class="mobile-menu-item"><a href="donate.html">Donate</a></div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (same background as index) -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
+  <div class="hero-img"></div>
   <div class="hero-content">
-    <div class="hero-breadcrumb"><a href="index.html">Home</a> / <span>Programs</span></div>
-    <h1 class="hero-title">Five Programs.<br/><em>One Movement.</em></h1>
-    <p class="hero-sub">Interconnected programs working together to build a more free, just, and empowered Uganda from the ground up.</p>
+    <div class="hero-text">
+      <div class="hero-breadcrumb"><a href="index.html">Home</a> / <span>Programs</span></div>
+      <h1 class="hero-title">Five Programs.<br/><em>One Movement.</em></h1>
+      <p class="hero-sub">Interconnected initiatives working together to build a more free, just, and empowered Uganda from the ground up.</p>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C180,80 360,0 540,40 C720,80 900,10 1080,45 C1260,80 1380,30 1440,40 L1440,80 L0,80 Z" fill="#f5fbf7"/>
+    </svg>
   </div>
 </section>
 
-<!-- TABS -->
+<!-- TABS BAR -->
 <div class="tabs-bar">
   <div class="tabs-inner">
     <button class="tab-btn active" data-tab="programs">Core Programs</button>
@@ -163,91 +207,34 @@
   </div>
 </div>
 
-<!-- PROGRAMS TAB -->
+<!-- PROGRAMS TAB (five program blocks) -->
 <div id="tab-programs" class="programs-section">
   <div style="max-width:1200px;margin:0 auto;">
-
+    <!-- Program 1 -->
     <div class="program-block reveal">
       <div class="prog-visual"><div class="prog-num">01</div><div class="prog-visual-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div></div>
-      <div>
-        <div class="program-tag">Program 1</div>
-        <h2 class="program-title">Freedom of Expression Program</h2>
-        <p class="program-desc">This program supports journalists, bloggers, artists, students, and community voices facing censorship, intimidation, or restrictions on their right to express themselves freely and safely.</p>
-        <ul class="activities-list">
-          <li>Community dialogues on expression rights</li>
-          <li>Media freedom campaigns across Uganda</li>
-          <li>Digital rights training for activists</li>
-          <li>Storytelling initiatives & youth expression forums</li>
-          <li>Citizen journalism workshops</li>
-        </ul>
-      </div>
+      <div><div class="program-tag">Program 1</div><h2 class="program-title">Freedom of Expression Program</h2><p class="program-desc">This program supports journalists, bloggers, artists, students, and community voices facing censorship, intimidation, or restrictions on their right to express themselves freely and safely.</p><ul class="activities-list"><li>Community dialogues on expression rights</li><li>Media freedom campaigns across Uganda</li><li>Digital rights training for activists</li><li>Storytelling initiatives & youth expression forums</li><li>Citizen journalism workshops</li></ul></div>
     </div>
-
+    <!-- Program 2 -->
     <div class="program-block reverse reveal">
       <div class="prog-visual"><div class="prog-num">02</div><div class="prog-visual-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div></div>
-      <div>
-        <div class="program-tag">Program 2</div>
-        <h2 class="program-title">Anti-Police Brutality Initiative</h2>
-        <p class="program-desc">This initiative raises awareness about unlawful arrests, excessive use of force, harassment, and abuse by security authorities — documenting violations and supporting victims toward justice.</p>
-        <ul class="activities-list">
-          <li>Documentation of reported violations</li>
-          <li>Community awareness campaigns on rights</li>
-          <li>Victim referrals and support services</li>
-          <li>Legal awareness sessions in communities</li>
-          <li>Peaceful anti-violence campaigns</li>
-          <li>Survivor healing circles</li>
-        </ul>
-      </div>
+      <div><div class="program-tag">Program 2</div><h2 class="program-title">Anti-Police Brutality Initiative</h2><p class="program-desc">This initiative raises awareness about unlawful arrests, excessive use of force, harassment, and abuse by security authorities — documenting violations and supporting victims toward justice.</p><ul class="activities-list"><li>Documentation of reported violations</li><li>Community awareness campaigns on rights</li><li>Victim referrals and support services</li><li>Legal awareness sessions in communities</li><li>Peaceful anti-violence campaigns</li><li>Survivor healing circles</li></ul></div>
     </div>
-
+    <!-- Program 3 -->
     <div class="program-block reveal">
       <div class="prog-visual"><div class="prog-num">03</div><div class="prog-visual-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div></div>
-      <div>
-        <div class="program-tag">Program 3</div>
-        <h2 class="program-title">Youth Civic Leadership Program</h2>
-        <p class="program-desc">Masina Organization trains young leaders to become advocates for democracy, peace, and accountability in their communities — building the next generation of civic champions.</p>
-        <ul class="activities-list">
-          <li>Leadership workshops & debate forums</li>
-          <li>Mentorship programs with experienced advocates</li>
-          <li>Civic education & digital activism training</li>
-          <li>Public speaking development sessions</li>
-          <li>Youth volunteer engagement networks</li>
-        </ul>
-      </div>
+      <div><div class="program-tag">Program 3</div><h2 class="program-title">Youth Civic Leadership Program</h2><p class="program-desc">Masina Organization trains young leaders to become advocates for democracy, peace, and accountability in their communities — building the next generation of civic champions.</p><ul class="activities-list"><li>Leadership workshops & debate forums</li><li>Mentorship programs with experienced advocates</li><li>Civic education & digital activism training</li><li>Public speaking development sessions</li><li>Youth volunteer engagement networks</li></ul></div>
     </div>
-
+    <!-- Program 4 -->
     <div class="program-block reverse reveal">
       <div class="prog-visual"><div class="prog-num">04</div><div class="prog-visual-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div></div>
-      <div>
-        <div class="program-tag">Program 4</div>
-        <h2 class="program-title">Community Peace & Dialogue Program</h2>
-        <p class="program-desc">This program creates safe spaces where communities can discuss social challenges peacefully and promote unity and reconciliation despite political or social differences.</p>
-        <ul class="activities-list">
-          <li>Inter-community dialogue forums</li>
-          <li>Peacebuilding workshops & conflict resolution training</li>
-          <li>Community mediation support</li>
-          <li>Women and youth focused forums</li>
-          <li>Cultural exchange events for unity</li>
-        </ul>
-      </div>
+      <div><div class="program-tag">Program 4</div><h2 class="program-title">Community Peace & Dialogue Program</h2><p class="program-desc">This program creates safe spaces where communities can discuss social challenges peacefully and promote unity and reconciliation despite political or social differences.</p><ul class="activities-list"><li>Inter-community dialogue forums</li><li>Peacebuilding workshops & conflict resolution training</li><li>Community mediation support</li><li>Women and youth focused forums</li><li>Cultural exchange events for unity</li></ul></div>
     </div>
-
+    <!-- Program 5 -->
     <div class="program-block reveal">
       <div class="prog-visual"><div class="prog-num">05</div><div class="prog-visual-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div></div>
-      <div>
-        <div class="program-tag">Program 5</div>
-        <h2 class="program-title">Mental Wellness & Activist Support</h2>
-        <p class="program-desc">Activists and victims of abuse often experience trauma, fear, and emotional exhaustion. This program provides the emotional and psychological support needed to sustain the movement.</p>
-        <ul class="activities-list">
-          <li>Peer support groups for activists</li>
-          <li>Mental wellness workshops & awareness</li>
-          <li>Counseling referrals & professional support</li>
-          <li>Healing retreats for survivors</li>
-          <li>Burnout prevention sessions</li>
-        </ul>
-      </div>
+      <div><div class="program-tag">Program 5</div><h2 class="program-title">Mental Wellness & Activist Support</h2><p class="program-desc">Activists and victims of abuse often experience trauma, fear, and emotional exhaustion. This program provides the emotional and psychological support needed to sustain the movement.</p><ul class="activities-list"><li>Peer support groups for activists</li><li>Mental wellness workshops & awareness</li><li>Counseling referrals & professional support</li><li>Healing retreats for survivors</li><li>Burnout prevention sessions</li></ul></div>
     </div>
-
   </div>
 </div>
 
@@ -256,17 +243,17 @@
   <div style="max-width:1200px;margin:0 auto;">
     <div class="section-label">Education as Liberation</div>
     <h2 class="section-title">Our <em>Workshops</em></h2>
-    <p style="max-width:580px;color:#5a7a66;line-height:1.75;font-size:0.95rem;">We believe education is one of the strongest tools against oppression. Our practical, interactive workshops empower communities with knowledge and leadership skills.</p>
+    <p style="max-width:580px;color:#5a7a66;line-height:1.75;font-size:0.95rem;margin-bottom:1rem;">We believe education is one of the strongest tools against oppression. Our practical, interactive workshops empower communities with knowledge and leadership skills.</p>
     <div class="workshops-grid">
-      <div class="workshop-card"><div class="ws-icon">🗣️</div><h3>Freedom of Expression & Digital Rights</h3><p>Understanding the right to speak freely and safely navigate digital spaces in Uganda's civic environment.</p></div>
-      <div class="workshop-card"><div class="ws-icon">🏛️</div><h3>Civic Education & Democracy</h3><p>Teaching citizens about governance, elections, civic participation, and constitutional rights.</p></div>
-      <div class="workshop-card"><div class="ws-icon">✊</div><h3>Community Organizing & Peaceful Advocacy</h3><p>Helping young leaders organize peacefully and effectively within their communities.</p></div>
-      <div class="workshop-card"><div class="ws-icon">🔐</div><h3>Digital Security for Activists</h3><p>Training participants on online safety, privacy protection, and responsible digital activism.</p></div>
-      <div class="workshop-card"><div class="ws-icon">⚖️</div><h3>Human Rights Awareness</h3><p>Educating communities on fundamental human rights and protection mechanisms available in Uganda.</p></div>
-      <div class="workshop-card"><div class="ws-icon">🌿</div><h3>Mental Wellness for Activists</h3><p>Helping activists manage stress, fear, trauma, and burnout — sustaining the movement long-term.</p></div>
-      <div class="workshop-card"><div class="ws-icon">📢</div><h3>Leadership & Public Speaking</h3><p>Building confidence and communication skills among youth and community advocates at all levels.</p></div>
-      <div class="workshop-card"><div class="ws-icon">📰</div><h3>Citizen Journalism</h3><p>Empowering communities to document, report, and share stories of injustice responsibly and safely.</p></div>
-      <div class="workshop-card"><div class="ws-icon">🤝</div><h3>Conflict Resolution & Mediation</h3><p>Training community members in peaceful conflict resolution and dialogue facilitation techniques.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Freedom of Expression & Digital Rights</h3><p>Understanding the right to speak freely and safely navigate digital spaces in Uganda's civic environment.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Civic Education & Democracy</h3><p>Teaching citizens about governance, elections, civic participation, and constitutional rights.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Community Organizing & Peaceful Advocacy</h3><p>Helping young leaders organize peacefully and effectively within their communities.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Digital Security for Activists</h3><p>Training participants on online safety, privacy protection, and responsible digital activism.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Human Rights Awareness</h3><p>Educating communities on fundamental human rights and protection mechanisms available in Uganda.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Mental Wellness for Activists</h3><p>Helping activists manage stress, fear, trauma, and burnout — sustaining the movement long-term.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Leadership & Public Speaking</h3><p>Building confidence and communication skills among youth and community advocates at all levels.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Citizen Journalism</h3><p>Empowering communities to document, report, and share stories of injustice responsibly and safely.</p></div>
+      <div class="workshop-card"><div class="ws-icon"></div><h3>Conflict Resolution & Mediation</h3><p>Training community members in peaceful conflict resolution and dialogue facilitation techniques.</p></div>
     </div>
   </div>
 </div>
@@ -275,69 +262,87 @@
 <div id="tab-activities" style="display:none;padding:80px 5%;max-width:1200px;margin:0 auto;">
   <div class="section-label">In the Field</div>
   <h2 class="section-title">Our <em>Activities</em></h2>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem;">
-    <div style="background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 10px rgba(26,122,60,0.05);">
-      <h3 style="font-family:'Playfair Display',serif;margin-bottom:0.8rem;">Community Outreach</h3>
-      <p style="font-size:0.9rem;color:#5a7a66;line-height:1.75;">We regularly visit communities to educate citizens about their rights, responsibilities, and opportunities for civic participation in shaping Uganda's future.</p>
-    </div>
-    <div style="background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 10px rgba(26,122,60,0.05);">
-      <h3 style="font-family:'Playfair Display',serif;margin-bottom:0.8rem;">Youth Forums</h3>
-      <p style="font-size:0.9rem;color:#5a7a66;line-height:1.75;">We organize youth forums where young people discuss governance, democracy, unemployment, social justice, corruption, and civic responsibility.</p>
-    </div>
-    <div style="background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 10px rgba(26,122,60,0.05);">
-      <h3 style="font-family:'Playfair Display',serif;margin-bottom:0.8rem;">Digital Advocacy Campaigns</h3>
-      <p style="font-size:0.9rem;color:#5a7a66;line-height:1.75;">Through social media campaigns, online storytelling, and digital awareness initiatives, we engage young Ugandans in conversations about justice and accountability.</p>
-    </div>
-    <div style="background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 10px rgba(26,122,60,0.05);">
-      <h3 style="font-family:'Playfair Display',serif;margin-bottom:0.8rem;">Public Awareness Campaigns</h3>
-      <p style="font-size:0.9rem;color:#5a7a66;line-height:1.75;">We conduct campaigns against police brutality, violence against activists, corruption, political intimidation, and abuse of authority.</p>
-    </div>
-    <div style="background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 10px rgba(26,122,60,0.05);">
-      <h3 style="font-family:'Playfair Display',serif;margin-bottom:0.8rem;">Community Dialogues</h3>
-      <p style="font-size:0.9rem;color:#5a7a66;line-height:1.75;">Masina facilitates peaceful dialogue sessions between community members, youth leaders, civil society actors, and local stakeholders.</p>
-    </div>
-    <div style="background:var(--green);border-radius:20px;padding:2rem;">
-      <h3 style="font-family:'Playfair Display',serif;color:#fff;margin-bottom:0.8rem;">Peace Walks & Civic Events</h3>
-      <p style="font-size:0.9rem;color:rgba(255,255,255,0.82);line-height:1.75;">We organize peaceful events that encourage unity, nonviolence, and democratic participation throughout communities across Uganda.</p>
-    </div>
+  <div class="activities-grid">
+    <div class="act-card"><h3>Community Outreach</h3><p>We regularly visit communities to educate citizens about their rights, responsibilities, and opportunities for civic participation in shaping Uganda's future.</p></div>
+    <div class="act-card"><h3>Youth Forums</h3><p>We organize youth forums where young people discuss governance, democracy, unemployment, social justice, corruption, and civic responsibility.</p></div>
+    <div class="act-card"><h3>Digital Advocacy Campaigns</h3><p>Through social media campaigns, online storytelling, and digital awareness initiatives, we engage young Ugandans in conversations about justice and accountability.</p></div>
+    <div class="act-card"><h3>Public Awareness Campaigns</h3><p>We conduct campaigns against police brutality, violence against activists, corruption, political intimidation, and abuse of authority.</p></div>
+    <div class="act-card"><h3>Community Dialogues</h3><p>Masina facilitates peaceful dialogue sessions between community members, youth leaders, civil society actors, and local stakeholders.</p></div>
+    <div class="act-card act-highlight"><h3>Peace Walks & Civic Events</h3><p>We organize peaceful events that encourage unity, nonviolence, and democratic participation throughout communities across Uganda.</p></div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- FOOTER (identical to index) -->
 <footer>
+  <div class="footer-bg"></div>
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="footer-brand"><img src="https://i.imgur.com/KwAnxWI.png" alt="Masina Organization" /><p class="footer-motto">"Silence Cannot Build a Free Society."</p><p>Defending freedom of expression, human rights, and democratic participation across Uganda since 2023.</p></div>
-      <div class="footer-col"><h4>Organization</h4><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#vision">Our Vision</a></li><li><a href="about.html#mission">Our Mission</a></li></ul></div>
-      <div class="footer-col"><h4>Programs</h4><ul><li><a href="programs.html">All Programs</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="volunteer.html">Volunteer</a></li></ul></div>
-      <div class="footer-col"><h4>Get Involved</h4><ul><li><a href="donate.html">Donate</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-brand">
+        <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization"/>
+        <p class="footer-motto">"Silence Cannot Build a Free Society."</p>
+        <p>Defending freedom of expression, human rights, and democratic participation across Uganda since 2023.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html">Report a Violation</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2025 Masina Organization. All rights reserved.</span><span>Kampala, Uganda · <a href="mailto:info@masinaorganization.org">info@masinaorganization.org</a></span></div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-email"><a href="mailto:info@masinaorganization.org">info@masinaorganization.org</a></div>
+      <div class="footer-bottom-copy">© 2026 Masina Organization. All rights reserved. · Kampala, Uganda</div>
+    </div>
   </div>
 </footer>
 
 <script>
+  // Mobile menu toggle
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
+    const open = mobileMenu.classList.toggle('open');
     const spans = hamburger.querySelectorAll('span');
-    if (isOpen) { spans[0].style.transform='rotate(45deg) translate(5px,5px)'; spans[1].style.opacity='0'; spans[2].style.transform='rotate(-45deg) translate(5px,-5px)'; }
-    else { spans.forEach(s => { s.style.transform=''; s.style.opacity=''; }); }
+    if(open){
+      spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+    } else {
+      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    }
   });
-  // Tabs
+
+  // Tabs switching
   const tabs = document.querySelectorAll('.tab-btn');
-  const panes = {programs:'tab-programs', workshops:'tab-workshops', activities:'tab-activities'};
-  tabs.forEach(btn => btn.addEventListener('click', () => {
-    tabs.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    Object.values(panes).forEach(id => document.getElementById(id).style.display='none');
-    document.getElementById(panes[btn.dataset.tab]).style.display='';
-  }));
-  // Reveal
+  const tabContents = {
+    programs: document.getElementById('tab-programs'),
+    workshops: document.getElementById('tab-workshops'),
+    activities: document.getElementById('tab-activities')
+  };
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      Object.values(tabContents).forEach(content => { if(content) content.style.display = 'none'; });
+      const activeTab = btn.dataset.tab;
+      if(tabContents[activeTab]) tabContents[activeTab].style.display = '';
+    });
+  });
+
+  // Reveal animation on scroll
   const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);} }), {threshold:0.1});
-  reveals.forEach(el => io.observe(el));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
