@@ -1,1 +1,1248 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masina Organization | Defending Freedom of Expression in Uganda</title>
+    <meta name="description" content="Masina Organization is a youth-led human rights and civic engagement organization based in Uganda, founded in 2023 to defend freedom of expression and human dignity.">
+    <meta property="og:title" content="Masina Organization | Defending Freedom of Expression in Uganda">
+    <meta property="og:description" content="Youth-led human rights and civic engagement organization defending freedom of expression and human dignity in Uganda.">
+    <meta property="og:image" content="https://i.imgur.com/XQPQzkx.png">
+    <meta property="og:url" content="https://masinaorganisation.org">
+    <link rel="icon" href="https://i.imgur.com/XQPQzkx.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/XQPQzkx.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green-primary: #1a7a3a;
+            --green-dark: #0d5c28;
+            --green-light: #2d9e54;
+            --green-accent: #34c759;
+            --green-pale: #e8f5e9;
+            --green-glass: rgba(26, 122, 58, 0.15);
+            --white: #ffffff;
+            --off-white: #f8faf8;
+            --gray-100: #f1f3f1;
+            --gray-200: #e2e6e3;
+            --gray-300: #c9cfc9;
+            --gray-600: #6b7c6b;
+            --gray-800: #2d3a2d;
+            --text-primary: #1a2e1a;
+            --text-secondary: #3d5a3d;
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(26, 122, 58, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+            padding: 0.7rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .nav-logo img {
+            height: 44px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-logo img { height: 38px; }
+
+        .nav-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .nav-logo-text { color: var(--green-primary); }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.88rem;
+            font-weight: 500;
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .navbar.scrolled .nav-links a { color: var(--text-secondary); }
+
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .navbar.scrolled .nav-links a:hover {
+            color: var(--green-primary);
+            background: var(--green-pale);
+        }
+
+        .nav-links a.active {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .navbar.scrolled .nav-links a.active {
+            color: var(--green-primary);
+            background: var(--green-pale);
+        }
+
+        .nav-cta {
+            background: var(--green-accent) !important;
+            color: var(--white) !important;
+            font-weight: 600 !important;
+            border-radius: 50px !important;
+            padding: 0.5rem 1.4rem !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-light) !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(52, 199, 89, 0.4);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--white);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled .hamburger span { background: var(--green-primary); }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 50%, var(--green-light) 100%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .mobile-menu.open { right: 0; }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 0.6rem 2rem;
+            opacity: 0;
+            transform: translateX(80px);
+            transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .mobile-menu.open a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-menu.open a:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu.open a:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-menu.open a:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-menu.open a:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-menu.open a:nth-child(5) { transition-delay: 0.3s; }
+        .mobile-menu.open a:nth-child(6) { transition-delay: 0.35s; }
+        .mobile-menu.open a:nth-child(7) { transition-delay: 0.4s; }
+        .mobile-menu.open a:nth-child(8) { transition-delay: 0.45s; }
+        .mobile-menu.open a:nth-child(9) { transition-delay: 0.5s; }
+        .mobile-menu.open a:nth-child(10) { transition-delay: 0.55s; }
+
+        .mobile-menu a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, #0d5c28 0%, #1a7a3a 35%, #2d9e54 70%, #1a7a3a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(52, 199, 89, 0.15) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -20%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: heroGlow 10s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes heroGlow {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, -20px) scale(1.1); }
+        }
+
+        /* Floating particles */
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            animation: particleFloat linear infinite;
+        }
+
+        .particle:nth-child(1) { width: 6px; height: 6px; left: 10%; top: 20%; animation-duration: 15s; }
+        .particle:nth-child(2) { width: 4px; height: 4px; left: 30%; top: 60%; animation-duration: 20s; animation-delay: -5s; }
+        .particle:nth-child(3) { width: 8px; height: 8px; left: 70%; top: 30%; animation-duration: 18s; animation-delay: -8s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 85%; top: 70%; animation-duration: 22s; animation-delay: -3s; }
+        .particle:nth-child(5) { width: 3px; height: 3px; left: 50%; top: 80%; animation-duration: 16s; animation-delay: -10s; }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 0.4rem 1.2rem;
+            color: var(--white);
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge svg { width: 16px; height: 16px; }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #fff, #a8e6cf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text {
+            font-size: 1.08rem;
+            color: rgba(255, 255, 255, 0.88);
+            max-width: 720px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.6rem;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--green-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-pale);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-green {
+            background: var(--green-primary);
+            color: var(--white);
+        }
+
+        .btn-green:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26, 122, 58, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--green-primary);
+            border: 2px solid var(--green-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--green-primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn svg { width: 18px; height: 18px; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--green-primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-label svg { width: 18px; height: 18px; }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===== ABOUT PREVIEW ===== */
+        .about-preview {
+            background: var(--off-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--green-pale), var(--green-light));
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--green-primary), var(--green-light));
+        }
+
+        .about-image-placeholder svg {
+            width: 80px;
+            height: 80px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(26, 122, 58, 0.12);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--green-primary);
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* ===== FOCUS AREAS ===== */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .focus-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .focus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--green-primary);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+            transform-origin: bottom;
+        }
+
+        .focus-card:hover::before { transform: scaleY(1); }
+
+        .focus-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(26, 122, 58, 0.1);
+            border-color: var(--green-pale);
+        }
+
+        .focus-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: var(--green-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .focus-card:hover .focus-icon {
+            background: var(--green-primary);
+        }
+
+        .focus-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--green-primary);
+            transition: var(--transition);
+        }
+
+        .focus-card:hover .focus-icon svg { color: var(--white); }
+
+        .focus-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .focus-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-primary), var(--green-light));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        /* ===== PROGRAMS PREVIEW ===== */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(26, 122, 58, 0.1);
+        }
+
+        .program-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--green-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .program-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--green-primary);
+        }
+
+        .program-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .program-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .program-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--green-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .program-link:hover { gap: 0.7rem; }
+        .program-link svg { width: 16px; height: 16px; }
+
+        /* ===== COUNTER SECTION ===== */
+        .counter-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .counter-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .counter-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .counter-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .counter-label {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 0.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(180deg, #0a1a0a 0%, #0d2a0d 100%);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 2rem 0;
+        }
+
+        .footer-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-brand p {
+            margin-top: 1rem;
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .footer-motto {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--green-accent);
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-column ul { list-style: none; }
+
+        .footer-column li { margin-bottom: 0.6rem; }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.55);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--green-accent);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-logo { display: flex; align-items: center; gap: 0.75rem; }
+        .footer-logo img { height: 36px; }
+        .footer-logo span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .about-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+            .counter-row { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 7rem 1.5rem 3rem; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .hero-actions .btn { width: 100%; max-width: 300px; justify-content: center; }
+            .section { padding: 3.5rem 1.5rem; }
+            .about-stats { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .about-stats { grid-template-columns: 1fr; }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.imgur.com/XQPQzkx.png" alt="Masina Organization Logo">
+                <span class="nav-logo-text">Masina</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="campaigns.html">Campaigns</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="activities.html">Activities</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="campaigns.html">Campaigns</a>
+        <a href="news.html">News & Blog</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="contact.html">Contact</a>
+        <a href="donate.html">Donate</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Defending Human Rights Since 2023
+            </div>
+            <h1>Voices Should <span>Never Be Silenced</span></h1>
+            <p class="hero-text">Masina Organization is a youth-led human rights and civic engagement organization based in Uganda, founded in 2023 to defend freedom of expression, promote democratic participation, challenge political oppression, and protect communities affected by police brutality and abuse of power.</p>
+            <div class="hero-actions">
+                <a href="volunteer.html" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Join Our Movement
+                </a>
+                <a href="campaigns.html" class="btn btn-glass">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Support Our Campaigns
+                </a>
+                <a href="contact.html" class="btn btn-glass">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Report Violations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="section about-preview">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image animate-on-scroll">
+                    <div class="about-image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                </div>
+                <div class="about-text animate-on-scroll">
+                    <div class="section-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                        Who We Are
+                    </div>
+                    <h3>An Independent, Non-Partisan Organization Defending Civic Freedoms in Uganda</h3>
+                    <p>We believe every Ugandan deserves the right to speak freely, organize peacefully, question leadership without fear, and live with dignity regardless of political belief, social status, religion, gender, or background.</p>
+                    <p>Through advocacy, civic education, legal awareness, community mobilization, youth empowerment, digital activism, and peaceful engagement, we stand with citizens whose voices are often ignored, threatened, or silenced.</p>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">2023</div>
+                            <div class="stat-label">Founded</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Programs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Lives Impacted</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOCUS AREAS -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    What We Focus On
+                </div>
+                <h2 class="section-title">Our Core Focus Areas</h2>
+                <p class="section-subtitle">We work across multiple areas to defend freedoms, empower communities, and build a more just and democratic Uganda.</p>
+            </div>
+            <div class="focus-grid">
+                <div class="focus-card animate-on-scroll">
+                    <div class="focus-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Freedom of Expression</h3>
+                    <p>Protecting the right of citizens, journalists, and activists to speak freely without intimidation or fear.</p>
+                </div>
+                <div class="focus-card animate-on-scroll">
+                    <div class="focus-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Anti-Police Brutality</h3>
+                    <p>Documenting abuses, supporting victims, and advocating for accountability and humane policing practices.</p>
+                </div>
+                <div class="focus-card animate-on-scroll">
+                    <div class="focus-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Youth Empowerment</h3>
+                    <p>Equipping youth with civic education, leadership skills, and opportunities for democratic participation.</p>
+                </div>
+                <div class="focus-card animate-on-scroll">
+                    <div class="focus-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <h3>Civic Education</h3>
+                    <p>Educating communities about constitutional rights, legal protections, and peaceful civic organizing.</p>
+                </div>
+                <div class="focus-card animate-on-scroll">
+                    <div class="focus-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Digital Rights</h3>
+                    <p>Defending online freedom, digital security, and the right to access information without surveillance.</p>
+                </div>
+                <div class="focus-card animate-on-scroll">
+                    <div class="focus-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Mental Wellness</h3>
+                    <p>Providing peer support, counseling referrals, and healing spaces for activists and survivors of abuse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT COUNTER -->
+    <section class="section cta-section">
+        <div class="section-container">
+            <div class="section-header" style="margin-bottom: 2.5rem;">
+                <div class="section-label" style="color: rgba(255,255,255,0.7);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(255,255,255,0.7);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Our Impact Since 2023
+                </div>
+                <h2 class="section-title" style="color: var(--white);">Growing Every Day</h2>
+            </div>
+            <div class="counter-row">
+                <div class="counter-card animate-on-scroll">
+                    <div class="counter-number">1000+</div>
+                    <div class="counter-label">Youth Reached</div>
+                </div>
+                <div class="counter-card animate-on-scroll">
+                    <div class="counter-number">50+</div>
+                    <div class="counter-label">Workshops Held</div>
+                </div>
+                <div class="counter-card animate-on-scroll">
+                    <div class="counter-number">5</div>
+                    <div class="counter-label">Active Programs</div>
+                </div>
+                <div class="counter-card animate-on-scroll">
+                    <div class="counter-number">10+</div>
+                    <div class="counter-label">Districts Covered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS PREVIEW -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    What We Do
+                </div>
+                <h2 class="section-title">Our Programs</h2>
+                <p class="section-subtitle">Through targeted programs, we address the most pressing human rights challenges facing Ugandan communities.</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card animate-on-scroll">
+                    <div class="program-card-header">
+                        <div class="program-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3>Freedom of Expression Program</h3>
+                    </div>
+                    <p>Supporting journalists, bloggers, artists, students, and community voices facing censorship, intimidation, or restrictions.</p>
+                    <a href="programs.html" class="program-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+                <div class="program-card animate-on-scroll">
+                    <div class="program-card-header">
+                        <div class="program-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Anti-Police Brutality Initiative</h3>
+                    </div>
+                    <p>Raising awareness about unlawful arrests, excessive force, harassment, and abuse by security authorities.</p>
+                    <a href="programs.html" class="program-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+                <div class="program-card animate-on-scroll">
+                    <div class="program-card-header">
+                        <div class="program-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>Youth Civic Leadership Program</h3>
+                    </div>
+                    <p>Training young leaders to become advocates for democracy, peace, and accountability in their communities.</p>
+                    <a href="programs.html" class="program-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="section-container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Stand With Us for Justice and Freedom</h2>
+                <p>Every voice matters. Every action counts. Join the movement to defend human rights and dignity in Uganda.</p>
+                <div class="cta-buttons">
+                    <a href="volunteer.html" class="btn btn-primary">Volunteer With Us</a>
+                    <a href="donate.html" class="btn btn-glass">Support Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="https://i.imgur.com/XQPQzkx.png" alt="Masina Organization">
+                    <span>Masina Organization</span>
+                </div>
+                <p>Defending Freedom of Expression, Human Rights, and Democratic Participation in Uganda.</p>
+                <div class="footer-motto">"Silence Cannot Build a Free Society."</div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="workshops.html">Workshops</a></li>
+                    <li><a href="campaigns.html">Campaigns</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Get Involved</h4>
+                <ul>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="news.html">News & Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@masinaorganisation.org">info@masinaorganisation.org</a></li>
+                    <li><a href="contact.html">Kampala, Uganda</a></li>
+                    <li><a href="contact.html">Mon – Fri: 8AM – 5PM</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 Masina Organization. All rights reserved.</span>
+            <span>Defending Freedom. Promoting Dignity.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
