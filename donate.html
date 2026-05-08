@@ -1,151 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Donate – Masina Organization</title>
-<link rel="icon" href="https://i.imgur.com/KwAnxWI.png" />
-<meta property="og:image" content="https://i.imgur.com/KwAnxWI.png" />
+<meta name="description" content="Support Masina Organization's work defending freedom of expression, human rights, and democratic participation across Uganda." />
+<link rel="icon" href="https://i.imgur.com/SoKIWX6.png" />
+<meta property="og:title" content="Donate – Masina Organization" />
+<meta property="og:image" content="https://i.imgur.com/bS3vP0N.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root{--green:#1a7a3c;--green-mid:#25a355;--green-light:#3fcf78;--green-pale:#e6f7ed;--white:#fff;--off-white:#f5fbf7;--text-dark:#0d2918;--shadow:0 8px 32px rgba(26,122,60,0.13);}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
+:root{--green:#1a7a3c;--green-mid:#25a355;--green-light:#3fcf78;--green-pale:#e6f7ed;--off-white:#f5fbf7;--text-dark:#0d2918;--text-mid:#2d5a3d;--shadow:0 8px 32px rgba(26,122,60,0.13);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
 
-  nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:70px;background:rgba(255,255,255,0.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.35);box-shadow:0 2px 24px rgba(26,122,60,0.08);}
-  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .nav-logo img{height:44px;}
-  .nav-logo span{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--green);font-weight:700;}
-  .nav-links{display:flex;gap:2rem;list-style:none;}
-  .nav-links a{text-decoration:none;color:var(--text-dark);font-size:0.92rem;font-weight:500;position:relative;transition:color 0.25s;}
-  .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--green-light);border-radius:2px;transition:width 0.3s;}
-  .nav-links a:hover{color:var(--green);}
-  .nav-links a:hover::after{width:100%;}
-  .nav-cta{background:var(--green);color:#fff!important;padding:8px 20px;border-radius:30px;}
-  .nav-cta::after{display:none!important;}
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
-  .hamburger span{display:block;width:26px;height:2.5px;background:var(--green);border-radius:2px;transition:all 0.35s;}
-  .mobile-menu{display:none;position:fixed;top:70px;left:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.35);z-index:999;padding:1.5rem 5% 2rem;flex-direction:column;}
-  .mobile-menu.open{display:flex;}
-  .mobile-menu-item{overflow:hidden;}
-  .mobile-menu-item a{display:block;padding:0.75rem 0;text-decoration:none;color:var(--text-dark);font-size:1.05rem;font-weight:500;border-bottom:1px solid #e8f4ec;transform:translateX(-40px);opacity:0;}
-  .mobile-menu.open .mobile-menu-item a{animation:rollIn 0.45s forwards;}
-  .mobile-menu.open .mobile-menu-item:nth-child(1) a{animation-delay:0.05s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(2) a{animation-delay:0.12s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(3) a{animation-delay:0.19s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(4) a{animation-delay:0.26s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(5) a{animation-delay:0.33s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(6) a{animation-delay:0.4s;}
-  .mobile-menu.open .mobile-menu-item:nth-child(7) a{animation-delay:0.47s;}
-  @keyframes rollIn{0%{transform:translateX(-40px) rotateY(-20deg);opacity:0;}60%{transform:translateX(6px) rotateY(2deg);opacity:1;}100%{transform:translateX(0) rotateY(0);opacity:1;}}
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:80px;background:rgba(255,255,255,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(26,122,60,0.10);box-shadow:0 2px 24px rgba(26,122,60,0.07);}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-brand img{height:72px;width:auto;}
+.nav-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:700;color:var(--green);letter-spacing:-.01em;line-height:1;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text-dark);font-size:0.9rem;font-weight:500;position:relative;transition:color .25s;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--green-light);border-radius:2px;transition:width .3s;}
+.nav-links a:hover{color:var(--green);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--green)!important;color:#fff!important;padding:8px 22px;border-radius:30px;font-weight:600!important;box-shadow:0 3px 14px rgba(26,122,60,0.28);}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{background:var(--green-mid)!important;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;align-items:flex-start;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+.hamburger span{display:block;height:2.5px;background:var(--green);border-radius:2px;transition:all .35s;}
+.hamburger span:nth-child(1){width:26px;}
+.hamburger span:nth-child(2){width:16px;}
+.hamburger span:nth-child(3){width:26px;}
+.mobile-menu{display:none;position:fixed;top:80px;left:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(26,122,60,0.08);z-index:999;padding:1.5rem 5% 2rem;flex-direction:column;}
+.mobile-menu.open{display:flex;}
+.mobile-menu-item a{display:block;padding:.78rem 0;text-decoration:none;color:var(--text-dark);font-size:1.05rem;font-weight:500;border-bottom:1px solid #e8f4ec;transform:translateX(-40px);opacity:0;transition:color .2s;}
+.mobile-menu.open .mobile-menu-item a{animation:rollIn .45s forwards;}
+@keyframes rollIn{0%{transform:translateX(-40px) rotateY(-20deg);opacity:0;}60%{transform:translateX(6px) rotateY(2deg);opacity:1;}100%{transform:translateX(0) rotateY(0);opacity:1;}}
+.mobile-menu-item a:hover{color:var(--green);}
 
-  /* HERO */
-  .hero{height:60vh;min-height:420px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(145deg,#0d2918 0%,#1a7a3c 50%,#3fcf78 100%);margin-top:70px;}
-  .hero-rings{position:absolute;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:flex-end;padding-right:8%;}
-  .hero-rings svg{width:420px;height:420px;opacity:0.1;}
-  .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5%;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
-  .hero-text{color:#fff;}
-  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);padding:5px 16px;border-radius:30px;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:1.2rem;animation:fadeUp 0.8s 0.1s both;}
-  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;font-weight:900;margin-bottom:1.2rem;animation:fadeUp 0.8s 0.25s both;}
-  .hero-title em{color:var(--green-light);font-style:normal;}
-  .hero-sub{font-size:1rem;line-height:1.7;color:rgba(255,255,255,0.8);margin-bottom:0;animation:fadeUp 0.8s 0.4s both;}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+/* HERO – identical to index */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;margin-top:80px;overflow:hidden;}
+.hero-img{position:absolute;inset:0;background:url('https://i.imgur.com/faIrFFO.jpeg') center/cover no-repeat;z-index:0;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,22,14,0.82) 0%,rgba(15,50,28,0.68) 50%,rgba(7,22,14,0.48) 100%);}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5%;width:100%;display:flex;align-items:center;min-height:calc(70vh - 80px);}
+.hero-text{color:#fff;max-width:660px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,4.2rem);line-height:1.08;font-weight:700;margin-bottom:1.3rem;letter-spacing:-.01em;animation:fadeUp .8s .25s both;}
+.hero-title em{color:var(--green-light);font-style:italic;}
+.hero-sub{font-size:1.05rem;line-height:1.75;color:rgba(255,255,255,0.78);margin-bottom:2rem;font-weight:300;animation:fadeUp .8s .4s both;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .55s both;}
+.btn-primary{background:#fff;color:var(--green);padding:13px 30px;border-radius:40px;font-weight:600;font-size:0.93rem;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block;}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.25);}
+.hero-wave{position:absolute;bottom:-2px;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;}
+.hero-wave svg{display:block;width:100%;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 
-  /* GLASS CARD IN HERO */
-  .hero-donate-quick{background:rgba(255,255,255,0.14);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.24);border-radius:24px;padding:2rem;animation:fadeUp 0.8s 0.45s both;box-shadow:0 8px 32px rgba(0,0,0,0.2);}
-  .hero-donate-quick h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;margin-bottom:1rem;}
-  .quick-amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1rem;}
-  .qa-btn{background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:12px;padding:10px 8px;color:#fff;font-size:0.9rem;font-weight:700;cursor:pointer;text-align:center;transition:background 0.2s,border-color 0.2s;font-family:'DM Sans',sans-serif;}
-  .qa-btn:hover,.qa-btn.selected{background:rgba(255,255,255,0.25);border-color:#fff;}
-  .qa-custom{width:100%;padding:10px 14px;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:12px;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;margin-bottom:1rem;}
-  .qa-custom::placeholder{color:rgba(255,255,255,0.5);}
-  .qa-custom:focus{border-color:#fff;background:rgba(255,255,255,0.2);}
-  .donate-now-btn{width:100%;padding:13px;background:#fff;color:var(--green);border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;}
-  .donate-now-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+/* Sections (shared with index) */
+section{padding:80px 5%;max-width:1400px;margin:0 auto;}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:0.73rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem;}
+.section-label::before{content:'';display:block;width:24px;height:2px;background:var(--green-light);border-radius:2px;}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,2.9rem);line-height:1.18;margin-bottom:1rem;font-weight:700;}
+h2.section-title em{color:var(--green);font-style:normal;}
 
-  .section-label{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.7rem;}
-  .section-label::before{content:'';display:block;width:24px;height:2px;background:var(--green-light);border-radius:2px;}
-  h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin-bottom:1rem;}
-  h2.section-title em{color:var(--green);font-style:normal;}
+/* Impact cards (adapted from donate page but with index card style) */
+.impact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.impact-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);transition:transform .3s,box-shadow .3s;box-shadow:0 2px 12px rgba(26,122,60,0.06);}
+.impact-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,122,60,0.14);}
+.impact-card-top{background:linear-gradient(135deg,var(--green) 0%,var(--green-mid) 100%);margin:-2rem -2rem 1.5rem;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;border-radius:20px 20px 0 0;}
+.impact-amount{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:900;color:#fff;}
+.impact-icon{width:44px;height:44px;background:rgba(255,255,255,0.18);border-radius:12px;display:flex;align-items:center;justify-content:center;}
+.impact-icon svg{width:22px;height:22px;fill:#fff;}
+.impact-card h4{font-size:1rem;font-weight:600;margin-bottom:0.5rem;}
+.impact-card p{font-size:0.88rem;line-height:1.72;color:#5a7a66;font-weight:300;}
+.donate-tier-btn{display:inline-block;margin-top:1.2rem;background:var(--green-pale);color:var(--green);padding:8px 22px;border-radius:30px;font-size:0.82rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:background .2s,color .2s;}
+.donate-tier-btn:hover{background:var(--green);color:#fff;}
 
-  /* IMPACT OF DONATION */
-  .impact-section{padding:80px 5%;max-width:1400px;margin:0 auto;}
-  .impact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
-  .impact-card{background:#fff;border-radius:22px;padding:2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 12px rgba(26,122,60,0.06);position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
-  .impact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
-  .impact-card-top{background:linear-gradient(135deg,var(--green) 0%,var(--green-mid) 100%);margin:-2rem -2rem 1.5rem;padding:2rem;display:flex;align-items:center;justify-content:space-between;}
-  .impact-amount{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#fff;}
-  .impact-icon{width:48px;height:48px;background:rgba(255,255,255,0.18);border-radius:14px;display:flex;align-items:center;justify-content:center;}
-  .impact-icon svg{width:24px;height:24px;fill:#fff;}
-  .impact-card h4{font-size:1rem;font-weight:600;margin-bottom:0.5rem;}
-  .impact-card p{font-size:0.86rem;color:#5a7a66;line-height:1.7;}
-  .donate-tier-btn{display:inline-block;margin-top:1.2rem;background:var(--green-pale);color:var(--green);padding:8px 20px;border-radius:30px;font-size:0.82rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s,color 0.2s;}
-  .donate-tier-btn:hover{background:var(--green);color:#fff;}
+/* Trust section (same as index but with different icons) */
+.trust-section{background:var(--green);max-width:none;padding:60px 5%;}
+.trust-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;}
+.trust-item svg{width:36px;height:36px;fill:rgba(255,255,255,0.7);margin-bottom:0.8rem;}
+.trust-item strong{display:block;font-size:0.9rem;color:#fff;margin-bottom:4px;}
+.trust-item span{font-size:0.8rem;color:rgba(255,255,255,0.68);}
 
-  /* TRUST SIGNALS */
-  .trust-section{background:var(--green);max-width:none;padding:60px 5%;}
-  .trust-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;}
-  .trust-item svg{width:36px;height:36px;fill:rgba(255,255,255,0.7);margin-bottom:0.8rem;}
-  .trust-item strong{display:block;font-size:0.9rem;color:#fff;margin-bottom:4px;}
-  .trust-item span{font-size:0.8rem;color:rgba(255,255,255,0.68);}
+/* Funds allocation (two‑column) */
+.funds-section{padding:80px 5%;max-width:1400px;margin:0 auto;}
+.funds-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.funds-visual{background:linear-gradient(135deg,var(--green-pale) 0%,#d4eedd 100%);border-radius:24px;padding:2.5rem;}
+.fund-bar-item{margin-bottom:1.5rem;}
+.fund-bar-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.fund-bar-label span{font-size:0.85rem;font-weight:500;color:var(--text-dark);}
+.fund-bar-label strong{font-size:0.85rem;font-weight:700;color:var(--green);}
+.fund-bar-track{height:10px;background:rgba(26,122,60,0.12);border-radius:10px;overflow:hidden;}
+.fund-bar-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--green),var(--green-light));animation:fillBar 1.5s ease-out both;}
+@keyframes fillBar{from{width:0;}to{width:var(--w);}}
 
-  /* USE OF FUNDS */
-  .funds-section{padding:80px 5%;max-width:1400px;margin:0 auto;}
-  .funds-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-  .funds-visual{background:linear-gradient(135deg,var(--green-pale) 0%,#d4eedd 100%);border-radius:24px;padding:2.5rem;}
-  .fund-bar-item{margin-bottom:1.5rem;}
-  .fund-bar-item:last-child{margin-bottom:0;}
-  .fund-bar-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
-  .fund-bar-label span{font-size:0.85rem;font-weight:500;color:var(--text-dark);}
-  .fund-bar-label strong{font-size:0.85rem;font-weight:700;color:var(--green);}
-  .fund-bar-track{height:10px;background:rgba(26,122,60,0.12);border-radius:10px;overflow:hidden;}
-  .fund-bar-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--green),var(--green-light));animation:fillBar 1.5s ease-out both;}
-  @keyframes fillBar{from{width:0;}to{width:var(--w);}}
-  .funds-text p{font-size:0.93rem;color:#5a7a66;line-height:1.8;margin-bottom:1rem;}
+/* FAQ */
+.faq-section{background:var(--green-pale);max-width:none;padding:80px 5%;}
+.faq-inner{max-width:800px;margin:0 auto;}
+.faq-item{background:#fff;border-radius:16px;margin-bottom:0.8rem;overflow:hidden;border:1px solid rgba(26,122,60,0.08);transition:box-shadow 0.2s;}
+.faq-item.open{box-shadow:var(--shadow);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;font-size:0.93rem;color:var(--text-dark);}
+.faq-q svg{width:20px;height:20px;fill:var(--green);transition:transform 0.3s;flex-shrink:0;}
+.faq-item.open .faq-q svg{transform:rotate(45deg);}
+.faq-a{padding:0 1.5rem;max-height:0;overflow:hidden;transition:max-height 0.4s,padding 0.3s;}
+.faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.2rem;}
+.faq-a p{font-size:0.88rem;color:#5a7a66;line-height:1.75;}
 
-  /* FAQ */
-  .faq-section{background:var(--green-pale);max-width:none;padding:80px 5%;}
-  .faq-inner{max-width:800px;margin:0 auto;}
-  .faq-item{background:#fff;border-radius:16px;margin-bottom:0.8rem;overflow:hidden;border:1px solid rgba(26,122,60,0.08);transition:box-shadow 0.2s;}
-  .faq-item.open{box-shadow:var(--shadow);}
-  .faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;font-size:0.93rem;color:var(--text-dark);}
-  .faq-q svg{width:20px;height:20px;fill:var(--green);transition:transform 0.3s;flex-shrink:0;}
-  .faq-item.open .faq-q svg{transform:rotate(45deg);}
-  .faq-a{padding:0 1.5rem;max-height:0;overflow:hidden;transition:max-height 0.4s,padding 0.3s;}
-  .faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.2rem;}
-  .faq-a p{font-size:0.88rem;color:#5a7a66;line-height:1.75;}
+/* Footer – identical to index */
+footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-width:none;overflow:hidden;}
+.footer-bg{position:absolute;inset:0;z-index:0;background:url('https://i.imgur.com/LgVCkJ1.jpeg') center/cover no-repeat;}
+.footer-bg::after{content:'';position:absolute;inset:0;background:rgba(5,14,9,0.88);}
+.footer-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr;gap:4rem;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand img{height:104px;width:auto;margin-bottom:1rem;}
+.footer-motto{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--green-light);margin:.5rem 0 1rem;font-style:italic;}
+.footer-brand p{font-size:0.85rem;line-height:1.78;color:rgba(255,255,255,0.48);font-weight:300;}
+.footer-col h4{font-size:0.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:1.2rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem;}
+.footer-col ul a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:0.87rem;transition:color .2s;font-weight:300;}
+.footer-col ul a:hover{color:var(--green-light);}
+.footer-bottom{padding:24px 0;font-size:0.78rem;color:rgba(255,255,255,0.3);}
+.footer-bottom-email{margin-bottom:8px;}
+.footer-bottom-email a{color:var(--green-light);text-decoration:none;font-size:0.82rem;}
+.footer-bottom-copy{color:rgba(255,255,255,0.28);}
 
-  footer{background:#071510;color:rgba(255,255,255,0.75);padding:60px 5% 0;max-width:none;}
-  .footer-inner{max-width:1200px;margin:0 auto;}
-  .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
-  .footer-brand img{height:50px;margin-bottom:1rem;}
-  .footer-motto{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--green-light);margin:0.5rem 0 1rem;font-style:italic;}
-  .footer-brand p{font-size:0.85rem;line-height:1.75;color:rgba(255,255,255,0.55);}
-  .footer-col h4{font-size:0.82rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.2rem;}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.65rem;}
-  .footer-col ul a{text-decoration:none;color:rgba(255,255,255,0.65);font-size:0.88rem;transition:color 0.2s;}
-  .footer-col ul a:hover{color:var(--green-light);}
-  .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:24px 0;font-size:0.8rem;color:rgba(255,255,255,0.35);}
-  .footer-bottom a{color:var(--green-light);text-decoration:none;}
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s,transform 0.7s;}
-  .reveal.visible{opacity:1;transform:none;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s;}
+.reveal.visible{opacity:1;transform:none;}
 
-  @media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}.hero-content{grid-template-columns:1fr;}.hero-donate-quick{display:none;}.impact-cards{grid-template-columns:1fr;}.trust-inner{grid-template-columns:1fr 1fr;}.funds-wrap{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr 1fr;}}
-  @media(max-width:600px){.trust-inner{grid-template-columns:1fr 1fr;}.footer-top{grid-template-columns:1fr;}}
+@media(max-width:960px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .impact-cards{grid-template-columns:1fr;}
+  .trust-inner{grid-template-columns:1fr 1fr;}
+  .funds-wrap{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .trust-inner{grid-template-columns:1fr;}
+  .hero-title{font-size:2.4rem;}
+  .hero-btns{flex-direction:column;gap:.75rem;}
+  .hero-btns a{text-align:center;}
+}
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="index.html" class="nav-logo"><img src="https://i.imgur.com/KwAnxWI.png" alt="Masina" /><span>Masina Organization</span></a>
+  <a href="index.html" class="nav-brand">
+    <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization"/>
+    <span class="nav-brand-name">Masina Organization</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="programs.html">Programs</a></li><li><a href="campaigns.html">Campaigns</a></li>
-    <li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="campaigns.html">Campaigns</a></li>
+    <li><a href="volunteer.html">Volunteer</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="donate.html" class="nav-cta">Donate</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-item"><a href="index.html">Home</a></div>
   <div class="mobile-menu-item"><a href="about.html">About Us</a></div>
@@ -156,71 +176,63 @@
   <div class="mobile-menu-item"><a href="donate.html">Donate</a></div>
 </div>
 
+<!-- HERO (same media as index) -->
 <section class="hero">
-  <div class="hero-rings">
-    <svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="190" fill="none" stroke="white" stroke-width="1"/><circle cx="200" cy="200" r="145" fill="none" stroke="white" stroke-width="1"/><circle cx="200" cy="200" r="100" fill="none" stroke="white" stroke-width="1"/><circle cx="200" cy="200" r="55" fill="none" stroke="white" stroke-width="1"/></svg>
-  </div>
+  <div class="hero-img"></div>
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-eyebrow">💚 Support the Movement</div>
       <h1 class="hero-title">Every Contribution<br/><em>Fuels Freedom</em></h1>
-      <p class="hero-sub">Your support helps us reach more communities, train more youth leaders, and stand with those whose voices have been silenced. Every shilling counts.</p>
-    </div>
-    <div class="hero-donate-quick">
-      <h3>Make a Donation</h3>
-      <div class="quick-amounts">
-        <button class="qa-btn" onclick="selectAmount(this,'20000')">UGX 20K</button>
-        <button class="qa-btn selected" onclick="selectAmount(this,'50000')">UGX 50K</button>
-        <button class="qa-btn" onclick="selectAmount(this,'100000')">UGX 100K</button>
-        <button class="qa-btn" onclick="selectAmount(this,'250000')">UGX 250K</button>
-        <button class="qa-btn" onclick="selectAmount(this,'500000')">UGX 500K</button>
-        <button class="qa-btn" onclick="selectAmount(this,'custom')">Custom</button>
+      <p class="hero-sub">Your support helps us reach more communities, train youth leaders, and stand with those whose voices have been silenced. Every shilling counts.</p>
+      <div class="hero-btns">
+        <a href="#impact" class="btn-primary">See Your Impact</a>
+        <a href="contact.html" class="btn-outline" style="background:transparent;border:1.5px solid rgba(255,255,255,0.5);color:#fff;">Contact for Donation</a>
       </div>
-      <input class="qa-custom" type="text" id="customInput" placeholder="Enter custom amount (UGX)" style="display:none;" />
-      <button class="donate-now-btn" onclick="donatePulse()">Donate Now →</button>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C180,80 360,0 540,40 C720,80 900,10 1080,45 C1260,80 1380,30 1440,40 L1440,80 L0,80 Z" fill="#f5fbf7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- IMPACT SECTION (from original donate page, restyled) -->
+<section id="impact" class="reveal" style="max-width:1200px;margin:0 auto;padding:80px 5%;">
+  <div class="section-label">Your Impact</div>
+  <h2 class="section-title">What Your Support <em>Makes Possible</em></h2>
+  <p style="color:#5a7a66;max-width:520px;font-size:0.96rem;line-height:1.75;margin-bottom:2rem;">Here's how your generosity translates directly into change across Uganda.</p>
+  <div class="impact-cards">
+    <div class="impact-card">
+      <div class="impact-card-top">
+        <div class="impact-amount">UGX 20K</div>
+        <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+      </div>
+      <h4>Workshop Materials</h4>
+      <p>Provides printed handouts, pens, and educational materials for a full community human rights workshop session.</p>
+      <button class="donate-tier-btn" onclick="showContactInfo()">Give UGX 20,000</button>
+    </div>
+    <div class="impact-card">
+      <div class="impact-card-top">
+        <div class="impact-amount">UGX 50K</div>
+        <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+      </div>
+      <h4>Community Transport</h4>
+      <p>Funds transport for two volunteers to reach a remote community for outreach and civic education sessions.</p>
+      <button class="donate-tier-btn" onclick="showContactInfo()">Give UGX 50,000</button>
+    </div>
+    <div class="impact-card">
+      <div class="impact-card-top">
+        <div class="impact-amount">UGX 100K</div>
+        <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+      </div>
+      <h4>Victim Support</h4>
+      <p>Helps cover referral costs and basic support for a survivor of police brutality or political intimidation.</p>
+      <button class="donate-tier-btn" onclick="showContactInfo()">Give UGX 100,000</button>
     </div>
   </div>
 </section>
 
-<!-- IMPACT OF GIFT -->
-<section class="impact-section reveal">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-label">Your Impact</div>
-    <h2 class="section-title">What Your Support <em>Makes Possible</em></h2>
-    <p style="color:#5a7a66;max-width:520px;font-size:0.95rem;line-height:1.75;">Here's how your generosity translates directly into change on the ground across Uganda.</p>
-    <div class="impact-cards">
-      <div class="impact-card">
-        <div class="impact-card-top">
-          <div class="impact-amount">UGX 20K</div>
-          <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
-        </div>
-        <h4>Workshop Materials</h4>
-        <p>Provides printed handouts, pens, and educational materials for a full community human rights workshop session.</p>
-        <button class="donate-tier-btn" onclick="donatePulse()">Give UGX 20,000</button>
-      </div>
-      <div class="impact-card">
-        <div class="impact-card-top">
-          <div class="impact-amount">UGX 50K</div>
-          <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
-        </div>
-        <h4>Community Transport</h4>
-        <p>Funds transport for two volunteers to reach a remote community for outreach work and civic education sessions.</p>
-        <button class="donate-tier-btn" onclick="donatePulse()">Give UGX 50,000</button>
-      </div>
-      <div class="impact-card">
-        <div class="impact-card-top">
-          <div class="impact-amount">UGX 100K</div>
-          <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
-        </div>
-        <h4>Victim Support</h4>
-        <p>Helps cover referral costs and basic support for a survivor of police brutality or political intimidation.</p>
-        <button class="donate-tier-btn" onclick="donatePulse()">Give UGX 100,000</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST -->
+<!-- TRUST SIGNALS -->
 <div class="trust-section reveal">
   <div class="trust-inner">
     <div class="trust-item">
@@ -236,7 +248,7 @@
     <div class="trust-item">
       <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       <strong>Regular Updates</strong>
-      <span>Donors receive impact updates and activity reports</span>
+      <span>Donors receive impact reports and activity updates</span>
     </div>
     <div class="trust-item">
       <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
@@ -305,52 +317,90 @@
         <div class="faq-q" onclick="toggleFaq(this)">Can I designate my donation to a specific program? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
         <div class="faq-a"><p>Absolutely. You can direct your contribution to any of our five core programs — from youth civic leadership to mental wellness support. Just let us know when you reach out.</p></div>
       </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How are donations reported and tracked? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        <div class="faq-a"><p>Masina Organization maintains full financial transparency. We produce periodic impact reports available to donors. You can request a financial overview at any time by contacting us directly.</p></div>
-      </div>
     </div>
   </div>
 </div>
 
+<!-- FOOTER (identical to index) -->
 <footer>
+  <div class="footer-bg"></div>
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="footer-brand"><img src="https://i.imgur.com/KwAnxWI.png" alt="Masina Organization" /><p class="footer-motto">"Silence Cannot Build a Free Society."</p><p>Defending freedom of expression, human rights, and democratic participation across Uganda since 2023.</p></div>
-      <div class="footer-col"><h4>Organization</h4><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#vision">Our Vision</a></li><li><a href="about.html#mission">Our Mission</a></li></ul></div>
-      <div class="footer-col"><h4>Programs</h4><ul><li><a href="programs.html">All Programs</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="volunteer.html">Volunteer</a></li></ul></div>
-      <div class="footer-col"><h4>Get Involved</h4><ul><li><a href="donate.html">Donate</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-brand">
+        <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization"/>
+        <p class="footer-motto">"Silence Cannot Build a Free Society."</p>
+        <p>Defending freedom of expression, human rights, and democratic participation across Uganda since 2023.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html">Report a Violation</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2025 Masina Organization. All rights reserved.</span><span>Kampala, Uganda · <a href="mailto:info@masinaorganization.org">info@masinaorganization.org</a></span></div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-email"><a href="mailto:info@masinaorganization.org">info@masinaorganization.org</a></div>
+      <div class="footer-bottom-copy">© 2026 Masina Organization. All rights reserved. · Kampala, Uganda</div>
+    </div>
   </div>
 </footer>
-<script>
-  const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu');
-  hamburger.addEventListener('click',()=>{const o=mobileMenu.classList.toggle('open');const s=hamburger.querySelectorAll('span');if(o){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{s.forEach(x=>{x.style.transform='';x.style.opacity='';})}});
 
-  let selectedAmt='50000';
-  function selectAmount(btn,val){
-    document.querySelectorAll('.qa-btn').forEach(b=>b.classList.remove('selected'));
-    btn.classList.add('selected');
-    selectedAmt=val;
-    document.getElementById('customInput').style.display=val==='custom'?'block':'none';
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    const spans = hamburger.querySelectorAll('span');
+    if(open) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+    } else {
+      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    }
+  });
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentNode;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
   }
-  function donatePulse(){
-    const msg=document.createElement('div');
-    msg.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:20px;padding:2rem 3rem;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2);z-index:9999;font-family:DM Sans,sans-serif;';
-    msg.innerHTML='<div style="font-size:2.5rem;margin-bottom:0.5rem;">💚</div><div style="font-family:Playfair Display,serif;font-size:1.3rem;margin-bottom:0.5rem;color:#0d2918;">Thank You!</div><div style="font-size:0.9rem;color:#5a7a66;max-width:280px;margin:0 auto;">To complete your donation, please contact us at<br/><a href="mailto:info@masinaorganization.org" style="color:#1a7a3c;font-weight:600;">info@masinaorganization.org</a></div><button onclick="this.parentNode.remove()" style="margin-top:1.2rem;background:#1a7a3c;color:#fff;border:none;border-radius:30px;padding:8px 24px;font-family:DM Sans,sans-serif;cursor:pointer;font-weight:600;">Close</button>';
+
+  // Contact info popup for donation buttons
+  function showContactInfo() {
+    const msg = document.createElement('div');
+    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:24px;padding:2rem 2.5rem;text-align:center;box-shadow:0 25px 50px rgba(0,0,0,0.2);z-index:9999;font-family:Outfit,sans-serif;max-width:90%;width:360px;';
+    msg.innerHTML = `
+      <div style="font-size:2rem;margin-bottom:0.5rem;">💚</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#0d2918;margin-bottom:0.75rem;">Thank you for your generosity</div>
+      <div style="font-size:0.9rem;color:#5a7a66;margin-bottom:1.2rem;">To complete your donation, please contact us directly:</div>
+      <div style="background:#f5fbf7;padding:0.75rem;border-radius:14px;margin-bottom:1rem;">
+        <a href="mailto:info@masinaorganization.org" style="color:#1a7a3c;font-weight:600;text-decoration:none;">info@masinaorganization.org</a><br/>
+        <span style="font-size:0.8rem;">+256 (0) 123 456 789</span>
+      </div>
+      <button onclick="this.parentNode.remove()" style="background:#1a7a3c;color:#fff;border:none;border-radius:40px;padding:10px 24px;font-family:Outfit;font-weight:600;cursor:pointer;margin-top:0.5rem;">Close</button>
+    `;
     document.body.appendChild(msg);
-    msg.style.animation='fadeUp 0.4s both';
+    msg.style.animation = 'fadeUp 0.3s both';
   }
-  function toggleFaq(el){
-    const item=el.parentNode;
-    const wasOpen=item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-    if(!wasOpen)item.classList.add('open');
-  }
-  const reveals=document.querySelectorAll('.reveal');
-  const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}}),{threshold:0.1});
-  reveals.forEach(el=>io.observe(el));
+
+  // Reveal animations
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
