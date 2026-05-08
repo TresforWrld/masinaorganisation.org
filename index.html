@@ -7,34 +7,19 @@
 <meta name="description" content="Masina Organization is a youth-led human rights and civic engagement organization based in Uganda."/>
 <link rel="icon" href="https://i.imgur.com/SoKIWX6.png"/>
 <meta property="og:title" content="Masina Organization"/>
-<meta property="og:image" content="https://i.imgur.com/SoKIWX6.png"/>
+<meta property="og:image" content="https://i.imgur.com/bS3vP0N.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --green:#1a7a3c; --green-mid:#25a355; --green-light:#3fcf78;
-  --green-pale:#e6f7ed; --off-white:#f5fbf7;
-  --text-dark:#0d2918; --text-mid:#2d5a3d;
-  --shadow:0 8px 32px rgba(26,122,60,0.13);
-}
+:root{--green:#1a7a3c;--green-mid:#25a355;--green-light:#3fcf78;--green-pale:#e6f7ed;--off-white:#f5fbf7;--text-dark:#0d2918;--text-mid:#2d5a3d;--shadow:0 8px 32px rgba(26,122,60,0.13);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Outfit',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;width:100%;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 5%;height:72px;
-  background:rgba(255,255,255,0.82);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(26,122,60,0.10);
-  box-shadow:0 2px 24px rgba(26,122,60,0.07);
-}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;background:rgba(255,255,255,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(26,122,60,0.10);box-shadow:0 2px 24px rgba(26,122,60,0.07);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-logo img{height:42px;width:auto;}
-.nav-logo span{font-family:'Cormorant Garamond',serif;font-size:1.22rem;color:var(--green);font-weight:700;letter-spacing:0.03em;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
 .nav-links a{text-decoration:none;color:var(--text-dark);font-size:0.9rem;font-weight:500;position:relative;transition:color .25s;}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--green-light);border-radius:2px;transition:width .3s;}
@@ -43,14 +28,11 @@ nav{
 .nav-cta{background:var(--green)!important;color:#fff!important;padding:8px 22px;border-radius:30px;font-weight:600!important;box-shadow:0 3px 14px rgba(26,122,60,0.28);}
 .nav-cta::after{display:none!important;}
 .nav-cta:hover{background:var(--green-mid)!important;transform:translateY(-1px);}
-
-/* hamburger — long / short / long */
 .hamburger{display:none;flex-direction:column;align-items:flex-start;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
 .hamburger span{display:block;height:2.5px;background:var(--green);border-radius:2px;transition:all .35s;}
 .hamburger span:nth-child(1){width:26px;}
 .hamburger span:nth-child(2){width:16px;}
 .hamburger span:nth-child(3){width:26px;}
-
 .mobile-menu{display:none;position:fixed;top:72px;left:0;width:100%;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(26,122,60,0.08);z-index:999;padding:1.5rem 5% 2rem;flex-direction:column;}
 .mobile-menu.open{display:flex;}
 .mobile-menu-item a{display:block;padding:.78rem 0;text-decoration:none;color:var(--text-dark);font-size:1.05rem;font-weight:500;border-bottom:1px solid #e8f4ec;transform:translateX(-40px);opacity:0;transition:color .2s;}
@@ -65,123 +47,58 @@ nav{
 .mobile-menu-item a:hover{color:var(--green);}
 @keyframes rollIn{0%{transform:translateX(-40px) rotateY(-20deg);opacity:0;}60%{transform:translateX(6px) rotateY(2deg);opacity:1;}100%{transform:translateX(0) rotateY(0);opacity:1;}}
 
-/* ── HERO ── */
-.hero{
-  position:relative;min-height:100vh;
-  display:flex;align-items:center;
-  margin-top:72px;overflow:hidden;
-}
-.hero-img{
-  position:absolute;inset:0;
-  background:url('https://i.imgur.com/faIrFFO.jpeg') center/cover no-repeat;
-  z-index:0;
-}
-.hero-img::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(120deg,rgba(7,22,14,0.78) 0%,rgba(15,50,28,0.65) 50%,rgba(7,22,14,0.45) 100%);
-}
-.hero-content{
-  position:relative;z-index:2;
-  max-width:1200px;margin:0 auto;padding:0 5%;width:100%;
-}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;margin-top:72px;overflow:hidden;}
+.hero-img{position:absolute;inset:0;background:url('https://i.imgur.com/faIrFFO.jpeg') center/cover no-repeat;z-index:0;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,22,14,0.82) 0%,rgba(15,50,28,0.68) 50%,rgba(7,22,14,0.48) 100%);}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 5%;width:100%;}
+.hero-logo{margin-bottom:2rem;animation:fadeUp .8s .05s both;}
+.hero-logo img{height:72px;filter:brightness(0) invert(1);}
 .hero-text{color:#fff;max-width:660px;}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);
-  padding:5px 18px;border-radius:40px;
-  font-size:0.75rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
-  color:rgba(255,255,255,0.88);margin-bottom:1.4rem;
-  animation:fadeUp .8s .1s both;
-}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);padding:5px 18px;border-radius:40px;font-size:0.75rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,0.88);margin-bottom:1.4rem;animation:fadeUp .8s .1s both;}
 .hero-eyebrow svg{width:13px;height:13px;fill:var(--green-light);}
-.hero-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.8rem,6vw,5rem);line-height:1.08;font-weight:700;
-  margin-bottom:1.3rem;letter-spacing:-.01em;
-  animation:fadeUp .8s .25s both;
-}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);line-height:1.08;font-weight:700;margin-bottom:1.3rem;letter-spacing:-.01em;animation:fadeUp .8s .25s both;}
 .hero-title em{color:var(--green-light);font-style:italic;}
-.hero-sub{
-  font-size:1.05rem;line-height:1.75;color:rgba(255,255,255,0.78);
-  margin-bottom:2.4rem;font-weight:300;
-  animation:fadeUp .8s .4s both;
-}
+.hero-sub{font-size:1.05rem;line-height:1.75;color:rgba(255,255,255,0.78);margin-bottom:2.4rem;font-weight:300;animation:fadeUp .8s .4s both;}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .55s both;}
-.btn-primary{
-  background:#fff;color:var(--green);
-  padding:13px 30px;border-radius:40px;font-weight:600;font-size:0.93rem;
-  text-decoration:none;transition:transform .2s,box-shadow .2s;
-  box-shadow:0 4px 20px rgba(0,0,0,0.2);display:inline-block;
-}
+.btn-primary{background:#fff;color:var(--green);padding:13px 30px;border-radius:40px;font-weight:600;font-size:0.93rem;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,0.2);display:inline-block;}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.25);}
-.btn-outline{
-  background:transparent;color:#fff;
-  padding:13px 30px;border-radius:40px;font-weight:600;font-size:0.93rem;
-  text-decoration:none;border:1.5px solid rgba(255,255,255,0.5);
-  transition:background .2s,border-color .2s;display:inline-block;
-}
+.btn-outline{background:transparent;color:#fff;padding:13px 30px;border-radius:40px;font-weight:600;font-size:0.93rem;text-decoration:none;border:1.5px solid rgba(255,255,255,0.5);transition:background .2s,border-color .2s;display:inline-block;}
 .btn-outline:hover{background:rgba(255,255,255,0.10);border-color:#fff;}
-
-/* hero wave bottom */
 .hero-wave{position:absolute;bottom:-2px;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;}
 .hero-wave svg{display:block;width:100%;}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 
-/* ── RIBBON SEPARATOR ── */
-.ribbon-sep{
-  position:relative;width:100%;height:90px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
-  pointer-events:none;
-}
-.ribbon-sep svg{position:absolute;width:100%;height:100%;}
+/* RIBBON SEPARATORS */
+.ribbon-sep{position:relative;width:100%;height:80px;overflow:visible;pointer-events:none;display:block;}
+.ribbon-sep svg{width:100%;height:100%;display:block;overflow:visible;}
+.rib{stroke-dasharray:1800;stroke-dashoffset:1800;animation:drawRib 4s ease forwards;}
+.rib-b{stroke-dasharray:1800;stroke-dashoffset:1800;animation:drawRib 4s .35s ease forwards;}
+@keyframes drawRib{to{stroke-dashoffset:0;}}
 
-/* ── SECTIONS ── */
+/* SECTIONS */
 section{padding:80px 5%;max-width:1400px;margin:0 auto;}
-.section-label{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:0.73rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--green);margin-bottom:.8rem;
-}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:0.73rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem;}
 .section-label::before{content:'';display:block;width:24px;height:2px;background:var(--green-light);border-radius:2px;}
 h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,2.9rem);line-height:1.18;margin-bottom:1rem;font-weight:700;}
 h2.section-title em{color:var(--green);font-style:italic;}
 
-/* ── MISSION PILLS ── */
-.mission-wrap{max-width:none;padding:0 5%;background:transparent;margin:0;}
-.mission-strip-inner{
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;
-  padding:0 0 10px;
-}
-.mission-pill{
-  display:flex;align-items:center;gap:16px;
-  padding:26px 28px;
-  background:#fff;border-radius:18px;
-  border:1px solid rgba(26,122,60,0.10);
-  box-shadow:0 2px 14px rgba(26,122,60,0.07);
-  transition:transform .3s,box-shadow .3s;
-}
+/* MISSION PILLS */
+.mission-wrap{padding:0 5%;background:transparent;margin:0;}
+.mission-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;}
+.mission-pill{display:flex;align-items:center;gap:16px;padding:26px 28px;background:#fff;border-radius:18px;border:1px solid rgba(26,122,60,0.10);box-shadow:0 2px 14px rgba(26,122,60,0.07);transition:transform .3s,box-shadow .3s;}
 .mission-pill:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,122,60,0.13);}
 .mission-pill-icon{width:48px;height:48px;flex-shrink:0;background:var(--green-pale);border-radius:14px;display:flex;align-items:center;justify-content:center;}
 .mission-pill-icon svg{width:22px;height:22px;fill:var(--green);}
 .mission-pill-text strong{display:block;font-size:0.92rem;color:var(--text-dark);font-weight:600;}
 .mission-pill-text span{font-size:0.78rem;color:var(--text-mid);}
 
-/* ── ABOUT ── */
+/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
 .about-visual{position:relative;}
-.about-main-img{
-  width:100%;border-radius:22px;
-  height:400px;overflow:hidden;position:relative;
-}
+.about-main-img{width:100%;border-radius:22px;height:400px;overflow:hidden;position:relative;}
 .about-main-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.about-float-card{
-  position:absolute;bottom:-22px;left:-22px;
-  background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);
-  border:1px solid rgba(26,122,60,0.12);border-radius:18px;
-  padding:18px 22px;box-shadow:var(--shadow);min-width:200px;
-}
+.about-float-card{position:absolute;bottom:-22px;left:-22px;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);border:1px solid rgba(26,122,60,0.12);border-radius:18px;padding:18px 22px;box-shadow:var(--shadow);min-width:200px;}
 .about-float-card strong{display:block;font-size:1.5rem;font-family:'Cormorant Garamond',serif;color:var(--green);font-weight:700;}
 .about-float-card span{font-size:0.82rem;color:var(--text-mid);}
 .about-text p{line-height:1.82;color:#3a5a47;margin-bottom:1.2rem;font-size:0.96rem;font-weight:300;}
@@ -189,13 +106,9 @@ h2.section-title em{color:var(--green);font-style:italic;}
 .chip{padding:6px 16px;border-radius:40px;font-size:0.79rem;font-weight:600;background:var(--green-pale);color:var(--green);border:1px solid rgba(26,122,60,0.15);transition:background .2s,color .2s;}
 .chip:hover{background:var(--green);color:#fff;}
 
-/* ── PROGRAMS ── */
+/* PROGRAMS */
 .programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.6rem;}
-.prog-card{
-  background:#fff;border-radius:20px;padding:2rem;
-  border:1px solid rgba(26,122,60,0.08);position:relative;overflow:hidden;
-  transition:transform .3s,box-shadow .3s;box-shadow:0 2px 12px rgba(26,122,60,0.06);
-}
+.prog-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;box-shadow:0 2px 12px rgba(26,122,60,0.06);}
 .prog-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--green-light));transform:scaleX(0);transform-origin:left;transition:transform .4s;}
 .prog-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,122,60,0.14);}
 .prog-card:hover::before{transform:scaleX(1);}
@@ -207,14 +120,9 @@ h2.section-title em{color:var(--green);font-style:italic;}
 .prog-link:hover{gap:10px;}
 .prog-link svg{width:14px;height:14px;fill:var(--green);}
 
-/* ── TESTIMONIALS ── */
+/* TESTIMONIALS */
 .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.6rem;}
-.testi-card{
-  background:#fff;border-radius:20px;padding:2.2rem;
-  border:1px solid rgba(26,122,60,0.08);
-  box-shadow:0 2px 12px rgba(26,122,60,0.06);
-  transition:transform .3s,box-shadow .3s;
-}
+.testi-card{background:#fff;border-radius:20px;padding:2.2rem;border:1px solid rgba(26,122,60,0.08);box-shadow:0 2px 12px rgba(26,122,60,0.06);transition:transform .3s,box-shadow .3s;}
 .testi-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(26,122,60,0.12);}
 .testi-quote{font-size:3rem;font-family:'Cormorant Garamond',serif;color:var(--green-light);line-height:.7;margin-bottom:1rem;}
 .testi-card p{font-size:0.92rem;line-height:1.78;color:#3a5a47;font-style:italic;font-weight:300;}
@@ -224,26 +132,21 @@ h2.section-title em{color:var(--green);font-style:italic;}
 .testi-name strong{display:block;font-size:0.88rem;color:var(--text-dark);font-weight:600;}
 .testi-name span{font-size:0.78rem;color:var(--green);}
 
-/* ── CTA BANNER ── */
-.cta-banner{
-  max-width:none;padding:80px 5%;text-align:center;
-  position:relative;overflow:hidden;
-  background:linear-gradient(135deg,#071610 0%,var(--green) 60%,var(--green-mid) 100%);
-}
+/* CTA BANNER */
+.cta-banner{max-width:none;padding:80px 5%;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#071610 0%,var(--green) 60%,var(--green-mid) 100%);}
 .cta-banner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.9rem);color:#fff;margin-bottom:1rem;font-weight:700;}
 .cta-banner p{color:rgba(255,255,255,0.78);max-width:520px;margin:0 auto 2.4rem;font-size:1rem;line-height:1.75;font-weight:300;}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-white{background:#fff;color:var(--green);padding:13px 30px;border-radius:40px;font-weight:600;font-size:0.93rem;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,0.2);display:inline-block;}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.25);}
 
-/* ── FOOTER ── */
-footer{
-  position:relative;color:rgba(255,255,255,0.78);
-  padding:70px 5% 0;max-width:none;overflow:hidden;
-}
+/* FOOTER */
+footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-width:none;overflow:hidden;}
 .footer-bg{position:absolute;inset:0;z-index:0;background:url('https://i.imgur.com/LgVCkJ1.jpeg') center/cover no-repeat;}
 .footer-bg::after{content:'';position:absolute;inset:0;background:rgba(5,14,9,0.88);}
 .footer-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
 .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);}
-.footer-brand img{height:48px;margin-bottom:1rem;}
+.footer-brand img{height:52px;margin-bottom:1rem;}
 .footer-motto{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--green-light);margin:.5rem 0 1rem;font-style:italic;}
 .footer-brand p{font-size:0.85rem;line-height:1.78;color:rgba(255,255,255,0.48);font-weight:300;}
 .footer-col h4{font-size:0.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:1.2rem;}
@@ -253,15 +156,11 @@ footer{
 .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:24px 0;font-size:0.78rem;color:rgba(255,255,255,0.3);flex-wrap:wrap;gap:8px;}
 .footer-bottom a{color:var(--green-light);text-decoration:none;}
 
-/* ── SCROLL REVEAL ── */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s;}
 .reveal.visible{opacity:1;transform:none;}
 
-/* ── RESPONSIVE ── */
 @media(max-width:960px){
-  .nav-links{display:none;}
-  .hamburger{display:flex;}
-  .hero-content{max-width:100%;}
+  .nav-links{display:none;}.hamburger{display:flex;}
   .about-grid{grid-template-columns:1fr;gap:3rem;}
   .about-float-card{left:0;bottom:-18px;}
   .programs-grid{grid-template-columns:1fr 1fr;}
@@ -282,11 +181,9 @@ footer{
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
-    <img src="https://i.imgur.com/SoKIWX6.png" alt="Masina Organization"/>
-    <span>Masina Organization</span>
+    <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization"/>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -302,7 +199,6 @@ footer{
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-item"><a href="index.html">Home</a></div>
   <div class="mobile-menu-item"><a href="about.html">About Us</a></div>
@@ -317,6 +213,9 @@ footer{
 <section class="hero">
   <div class="hero-img"></div>
   <div class="hero-content">
+    <div class="hero-logo">
+      <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization"/>
+    </div>
     <div class="hero-text">
       <div class="hero-eyebrow">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
@@ -331,7 +230,7 @@ footer{
     </div>
   </div>
   <div class="hero-wave">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
       <path d="M0,40 C180,80 360,0 540,40 C720,80 900,10 1080,45 C1260,80 1380,30 1440,40 L1440,80 L0,80 Z" fill="#f5fbf7"/>
     </svg>
   </div>
@@ -339,9 +238,9 @@ footer{
 
 <!-- RIBBON 1 -->
 <div class="ribbon-sep" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="rib1" d="M-20,45 C100,10 200,75 360,42 C520,10 640,72 800,38 C960,5 1100,70 1260,40 C1360,22 1420,55 1460,45" fill="none" stroke="rgba(26,122,60,0.18)" stroke-width="3" stroke-linecap="round"/>
-    <path class="rib2" d="M-20,55 C120,85 250,20 420,55 C590,88 700,18 860,50 C1020,82 1160,15 1320,52 C1400,68 1440,42 1460,55" fill="none" stroke="rgba(63,207,120,0.13)" stroke-width="2" stroke-linecap="round"/>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="rib" d="M-20,40 C120,5 280,75 480,38 C680,2 840,70 1060,35 C1240,8 1370,58 1460,40" fill="none" stroke="rgba(26,122,60,0.22)" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="rib-b" d="M-20,55 C150,85 320,18 540,52 C760,85 920,20 1140,50 C1300,72 1410,30 1460,55" fill="none" stroke="rgba(63,207,120,0.14)" stroke-width="2" stroke-linecap="round"/>
   </svg>
 </div>
 
@@ -365,13 +264,13 @@ footer{
 
 <!-- RIBBON 2 -->
 <div class="ribbon-sep" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="rib3" d="M-20,35 C150,70 300,15 500,48 C700,80 850,12 1050,46 C1200,72 1360,20 1460,38" fill="none" stroke="rgba(26,122,60,0.15)" stroke-width="2.5" stroke-linecap="round"/>
-    <path class="rib4" d="M-20,58 C130,25 310,78 520,44 C730,12 920,68 1120,35 C1280,10 1400,60 1460,50" fill="none" stroke="rgba(63,207,120,0.10)" stroke-width="2" stroke-linecap="round"/>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path class="rib" d="M-20,35 C200,72 420,8 660,44 C900,80 1080,14 1300,46 C1390,62 1440,28 1460,36" fill="none" stroke="rgba(26,122,60,0.18)" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="rib-b" d="M-20,60 C180,28 380,76 620,40 C860,4 1040,66 1260,30 C1380,8 1440,52 1460,58" fill="none" stroke="rgba(63,207,120,0.11)" stroke-width="2" stroke-linecap="round"/>
   </svg>
 </div>
 
-<!-- ABOUT TEASER -->
+<!-- ABOUT -->
 <section class="reveal">
   <div style="max-width:1200px;margin:0 auto;">
     <div class="about-grid">
@@ -407,9 +306,9 @@ footer{
 
 <!-- RIBBON 3 -->
 <div class="ribbon-sep" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="rib5" d="M-20,50 C200,15 400,78 620,40 C840,5 1000,72 1200,38 C1340,16 1420,58 1460,48" fill="none" stroke="rgba(26,122,60,0.16)" stroke-width="3" stroke-linecap="round"/>
-    <path class="rib6" d="M-20,30 C160,65 350,8 580,45 C810,80 970,20 1180,52 C1320,72 1420,28 1460,35" fill="none" stroke="rgba(63,207,120,0.11)" stroke-width="2" stroke-linecap="round"/>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path class="rib" d="M-20,48 C240,82 460,10 700,46 C940,82 1100,14 1320,44 C1400,58 1440,30 1460,46" fill="none" stroke="rgba(26,122,60,0.16)" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="rib-b" d="M-20,25 C180,5 400,65 640,30 C880,0 1060,60 1280,26 C1390,8 1440,48 1460,28" fill="none" stroke="rgba(63,207,120,0.10)" stroke-width="2" stroke-linecap="round"/>
   </svg>
 </div>
 
@@ -463,9 +362,9 @@ footer{
 
 <!-- RIBBON 4 -->
 <div class="ribbon-sep" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="rib7" d="M-20,42 C220,80 430,8 660,46 C890,82 1060,14 1280,50 C1380,66 1430,32 1460,42" fill="none" stroke="rgba(26,122,60,0.15)" stroke-width="3" stroke-linecap="round"/>
-    <path class="rib8" d="M-20,62 C180,28 380,75 600,38 C820,2 1010,65 1220,30 C1360,6 1430,54 1460,60" fill="none" stroke="rgba(63,207,120,0.10)" stroke-width="2" stroke-linecap="round"/>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path class="rib" d="M-20,42 C220,78 430,6 660,44 C890,80 1060,12 1280,48 C1380,64 1430,30 1460,42" fill="none" stroke="rgba(26,122,60,0.15)" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="rib-b" d="M-20,62 C180,26 380,73 600,36 C820,0 1010,63 1220,28 C1360,4 1430,52 1460,60" fill="none" stroke="rgba(63,207,120,0.10)" stroke-width="2" stroke-linecap="round"/>
   </svg>
 </div>
 
@@ -505,9 +404,9 @@ footer{
 
 <!-- RIBBON 5 -->
 <div class="ribbon-sep" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="rib9" d="M-20,48 C240,85 460,12 700,50 C940,86 1100,16 1320,46 C1400,60 1440,34 1460,46" fill="none" stroke="rgba(26,122,60,0.14)" stroke-width="2.5" stroke-linecap="round"/>
-    <path class="rib10" d="M-20,28 C200,5 420,68 660,32 C900,0 1080,62 1300,28 C1400,12 1440,48 1460,30" fill="none" stroke="rgba(63,207,120,0.09)" stroke-width="2" stroke-linecap="round"/>
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path class="rib" d="M-20,46 C240,82 460,10 700,48 C940,84 1100,16 1320,44 C1400,58 1440,32 1460,46" fill="none" stroke="rgba(26,122,60,0.14)" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="rib-b" d="M-20,28 C200,3 420,66 660,30 C900,-2 1080,60 1300,26 C1400,10 1440,46 1460,30" fill="none" stroke="rgba(63,207,120,0.09)" stroke-width="2" stroke-linecap="round"/>
   </svg>
 </div>
 
@@ -516,7 +415,7 @@ footer{
   <h2>Silence Cannot Build a Free Society</h2>
   <p>Join Masina Organization in the movement to protect rights, empower communities, and build a democratic Uganda where every voice matters.</p>
   <div class="cta-btns">
-    <a href="donate.html" class="btn-primary">Support Our Work</a>
+    <a href="donate.html" class="btn-white">Support Our Work</a>
     <a href="volunteer.html" class="btn-outline">Become a Volunteer</a>
   </div>
 </div>
@@ -527,7 +426,7 @@ footer{
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="https://i.imgur.com/SoKIWX6.png" alt="Masina Organization"/>
+        <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization"/>
         <p class="footer-motto">"Silence Cannot Build a Free Society."</p>
         <p>Defending freedom of expression, human rights, and democratic participation across Uganda since 2023.</p>
       </div>
@@ -567,43 +466,17 @@ footer{
 </footer>
 
 <script>
-/* Hamburger */
-const hbg = document.getElementById('hamburger');
-const mob = document.getElementById('mobileMenu');
-hbg.addEventListener('click', () => {
-  const open = mob.classList.toggle('open');
-  const s = hbg.querySelectorAll('span');
-  if (open) {
-    s[0].style.transform = 'rotate(45deg) translate(5px,5px)';
-    s[1].style.opacity = '0';
-    s[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
-  } else {
-    s.forEach(x => { x.style.transform=''; x.style.opacity=''; });
-  }
+const hbg=document.getElementById('hamburger'),mob=document.getElementById('mobileMenu');
+hbg.addEventListener('click',()=>{
+  const open=mob.classList.toggle('open');
+  const s=hbg.querySelectorAll('span');
+  if(open){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}
+  else{s.forEach(x=>{x.style.transform='';x.style.opacity='';})}
 });
-
-/* Scroll reveal */
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-}), { threshold: 0.10 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-/* Animated ribbons — offset each path with a CSS animation */
-const ribbonStyle = document.createElement('style');
-ribbonStyle.textContent = `
-  .rib1,.rib2,.rib3,.rib4,.rib5,.rib6,.rib7,.rib8,.rib9,.rib10 {
-    stroke-dasharray: 1600;
-    stroke-dashoffset: 1600;
-    animation: drawRib 3s ease forwards;
-  }
-  .rib2,.rib4,.rib6,.rib8,.rib10 { animation-delay: .4s; }
-  .rib3 { animation-delay: .1s; } .rib5 { animation-delay: .2s; }
-  .rib7 { animation-delay: .15s; } .rib9 { animation-delay: .3s; }
-  @keyframes drawRib {
-    to { stroke-dashoffset: 0; }
-  }
-`;
-document.head.appendChild(ribbonStyle);
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
+}),{threshold:.10});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
