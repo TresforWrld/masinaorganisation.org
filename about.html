@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us – Masina Organization</title>
+<link rel="icon" href="https://i.imgur.com/KwAnxWI.png" />
+<meta property="og:image" content="https://i.imgur.com/KwAnxWI.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --green: #1a7a3c; --green-mid: #25a355; --green-light: #3fcf78;
+    --green-pale: #e6f7ed; --white: #ffffff; --off-white: #f5fbf7;
+    --text-dark: #0d2918; --text-mid: #2d5a3d;
+    --glass-bg: rgba(255,255,255,0.18); --glass-border: rgba(255,255,255,0.35);
+    --shadow: 0 8px 32px rgba(26,122,60,0.13);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; height: 70px;
+    background: rgba(255,255,255,0.72); backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 2px 24px rgba(26,122,60,0.08);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { height: 44px; }
+  .nav-logo span { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--green); font-weight: 700; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text-dark); font-size: 0.92rem; font-weight: 500; position: relative; transition: color 0.25s; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--green-light); border-radius: 2px; transition: width 0.3s; }
+  .nav-links a:hover { color: var(--green); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta { background: var(--green); color: #fff !important; padding: 8px 20px; border-radius: 30px; transition: background 0.25s !important; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--green-mid) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+  .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--green); border-radius: 2px; transition: all 0.35s; }
+  .mobile-menu { display: none; position: fixed; top: 70px; left: 0; width: 100%; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); z-index: 999; padding: 1.5rem 5% 2rem; flex-direction: column; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu-item { overflow: hidden; }
+  .mobile-menu-item a { display: block; padding: 0.75rem 0; text-decoration: none; color: var(--text-dark); font-size: 1.05rem; font-weight: 500; border-bottom: 1px solid #e8f4ec; transform: translateX(-40px); opacity: 0; transition: color 0.2s; }
+  .mobile-menu.open .mobile-menu-item a { animation: rollIn 0.45s forwards; }
+  .mobile-menu.open .mobile-menu-item:nth-child(1) a { animation-delay: 0.05s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(2) a { animation-delay: 0.12s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(3) a { animation-delay: 0.19s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(4) a { animation-delay: 0.26s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(5) a { animation-delay: 0.33s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(6) a { animation-delay: 0.40s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(7) a { animation-delay: 0.47s; }
+  @keyframes rollIn {
+    0% { transform: translateX(-40px) rotateY(-20deg); opacity: 0; }
+    60% { transform: translateX(6px) rotateY(2deg); opacity: 1; }
+    100% { transform: translateX(0) rotateY(0); opacity: 1; }
+  }
+
+  /* HERO */
+  .hero {
+    height: 60vh; min-height: 420px;
+    display: flex; align-items: flex-end;
+    position: relative; overflow: hidden;
+    background: linear-gradient(160deg, #071510 0%, #1a7a3c 60%, #3fcf78 100%);
+    margin-top: 70px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 60% at 30% 30%, rgba(255,255,255,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 50% at 85% 70%, rgba(63,207,120,0.18) 0%, transparent 60%);
+  }
+  .hero-lines {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .hero-lines svg { position: absolute; bottom: 0; left: 0; width: 100%; opacity: 0.08; }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto; padding: 0 5% 60px; width: 100%;
+  }
+  .hero-breadcrumb { color: rgba(255,255,255,0.55); font-size: 0.8rem; margin-bottom: 1rem; }
+  .hero-breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+  .hero-breadcrumb span { color: var(--green-light); }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); color: #fff; font-weight: 900; line-height: 1.1; animation: fadeUp 0.9s 0.1s both; }
+  .hero-title em { color: var(--green-light); font-style: normal; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 520px; margin-top: 1rem; line-height: 1.7; animation: fadeUp 0.9s 0.3s both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+  /* CONTENT */
+  .page-section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+  .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.7rem; }
+  .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--green-light); border-radius: 2px; }
+  h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; margin-bottom: 1rem; }
+  h2.section-title em { color: var(--green); font-style: normal; }
+
+  /* STORY */
+  .story-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+  .story-aside { position: sticky; top: 90px; }
+  .story-aside-card {
+    background: #fff; border-radius: 20px; padding: 2rem;
+    border: 1px solid rgba(26,122,60,0.1); box-shadow: var(--shadow);
+  }
+  .story-aside-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 16px; margin-bottom: 1rem; }
+  .story-aside-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .story-aside-card p { font-size: 0.85rem; color: #5a7a66; line-height: 1.7; }
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: flex; gap: 2rem; padding-bottom: 2.5rem; position: relative; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; min-width: 48px; }
+  .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--green); border: 3px solid var(--green-pale); flex-shrink: 0; margin-top: 4px; }
+  .tl-line { flex: 1; width: 2px; background: linear-gradient(to bottom, var(--green-light), var(--green-pale)); margin-top: 4px; }
+  .tl-item:last-child .tl-line { display: none; }
+  .tl-content { }
+  .tl-year { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 0.4rem; }
+  .tl-content h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .tl-content p { font-size: 0.9rem; color: #5a7a66; line-height: 1.75; }
+
+  /* VISION/MISSION */
+  .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .vm-card {
+    border-radius: 24px; padding: 2.5rem;
+    position: relative; overflow: hidden;
+  }
+  .vm-card.vision { background: var(--green); color: #fff; }
+  .vm-card.mission { background: #fff; border: 1px solid rgba(26,122,60,0.1); box-shadow: var(--shadow); }
+  .vm-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+  .vm-card.vision .vm-icon { background: rgba(255,255,255,0.15); }
+  .vm-card.mission .vm-icon { background: var(--green-pale); }
+  .vm-icon svg { width: 28px; height: 28px; }
+  .vm-card.vision .vm-icon svg { fill: #fff; }
+  .vm-card.mission .vm-icon svg { fill: var(--green); }
+  .vm-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem; }
+  .vm-card.vision h3 { color: #fff; }
+  .vm-card.mission h3 { color: var(--text-dark); }
+  .vm-card p { font-size: 0.95rem; line-height: 1.8; }
+  .vm-card.vision p { color: rgba(255,255,255,0.82); }
+  .vm-card.mission p { color: #5a7a66; }
+  .vm-card.vision::before { content: ''; position: absolute; right: -40px; bottom: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.07); }
+
+  /* VALUES */
+  .values-section { background: var(--green); max-width: none; padding: 80px 5%; }
+  .values-inner { max-width: 1200px; margin: 0 auto; }
+  .values-section .section-label { color: rgba(255,255,255,0.6); }
+  .values-section .section-label::before { background: rgba(255,255,255,0.4); }
+  .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem; }
+  .val-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 18px; padding: 1.8rem 1.5rem;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .val-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-4px); }
+  .val-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .val-card h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; margin-bottom: 0.5rem; }
+  .val-card p { font-size: 0.83rem; color: rgba(255,255,255,0.72); line-height: 1.6; }
+
+  /* GOALS */
+  .goals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+  .goal-card {
+    background: #fff; border-radius: 18px; padding: 1.8rem;
+    border: 1px solid rgba(26,122,60,0.08);
+    display: flex; gap: 1rem; align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(26,122,60,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .goal-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(26,122,60,0.1); }
+  .goal-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--green-pale); line-height: 1; min-width: 44px; }
+  .goal-text h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-dark); }
+  .goal-text p { font-size: 0.85rem; color: #5a7a66; line-height: 1.65; }
+
+  /* FOOTER */
+  footer { background: #071510; color: rgba(255,255,255,0.75); padding: 60px 5% 0; max-width: none; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand img { height: 50px; margin-bottom: 1rem; }
+  .footer-motto { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--green-light); margin: 0.5rem 0 1rem; font-style: italic; }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.75; color: rgba(255,255,255,0.55); }
+  .footer-col h4 { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .footer-col ul a { text-decoration: none; color: rgba(255,255,255,0.65); font-size: 0.88rem; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--green-light); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+  .footer-bottom a { color: var(--green-light); text-decoration: none; }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .story-grid { grid-template-columns: 1fr; }
+    .story-aside { position: static; }
+    .vm-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .goals-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://i.imgur.com/KwAnxWI.png" alt="Masina Organization" />
+    <span>Masina Organization</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="campaigns.html">Campaigns</a></li>
+    <li><a href="volunteer.html">Volunteer</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donate.html" class="nav-cta">Donate</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-item"><a href="index.html">Home</a></div>
+  <div class="mobile-menu-item"><a href="about.html">About Us</a></div>
+  <div class="mobile-menu-item"><a href="programs.html">Programs</a></div>
+  <div class="mobile-menu-item"><a href="campaigns.html">Campaigns</a></div>
+  <div class="mobile-menu-item"><a href="volunteer.html">Volunteer</a></div>
+  <div class="mobile-menu-item"><a href="contact.html">Contact</a></div>
+  <div class="mobile-menu-item"><a href="donate.html">Donate</a></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0,160 C360,80 720,200 1080,120 C1260,80 1380,140 1440,120 L1440,200 L0,200 Z" fill="#fff"/></svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-breadcrumb"><a href="index.html">Home</a> / <span>About Us</span></div>
+    <h1 class="hero-title">Independent. <em>Youth-Led.</em><br/>Fearless.</h1>
+    <p class="hero-sub">Learn how a group of young activists transformed shared outrage into an enduring movement for freedom and dignity across Uganda.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="page-section reveal" id="story">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="story-grid">
+      <div class="story-aside">
+        <div class="story-aside-card">
+          <img src="https://i.imgur.com/KwAnxWI.png" alt="Masina Logo" style="border-radius:12px;" />
+          <h3>Masina Organization</h3>
+          <p>Founded 2023 in Kampala, Uganda. Non-partisan, independent, youth-led. Committed to peaceful civic action and human rights defense.</p>
+          <div style="margin-top:1.2rem; display:flex; flex-direction:column; gap:0.7rem;">
+            <div style="display:flex;gap:10px;align-items:center;font-size:0.85rem;color:var(--text-mid);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Kampala, Uganda
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;font-size:0.85rem;color:var(--text-mid);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--green)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              info@masinaorganization.org
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">How <em>Masina</em> Was Born</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content">
+              <div class="tl-year">Late 2022</div>
+              <h4>Witnessing Injustice</h4>
+              <p>Several young community activists from different parts of Uganda began documenting stories of unlawful arrests, intimidation during peaceful gatherings, harassment of journalists, and excessive force against civilians. Many citizens were afraid to speak publicly after witnessing friends and fellow activists detained or threatened.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content">
+              <div class="tl-year">The Turning Point</div>
+              <h4>A Peaceful Gathering Disrupted</h4>
+              <p>During a peaceful youth discussion in Kampala about unemployment, corruption, and freedom of speech, security officers reportedly disrupted the gathering and detained several participants — including student leaders, local musicians, bloggers, and community volunteers. Most were later released, but the experience exposed the vulnerability of ordinary citizens.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content">
+              <div class="tl-year">Weeks After</div>
+              <h4>Building in Secret</h4>
+              <p>A small network of volunteers began meeting secretly in homes, university hostels, churches, and community spaces to discuss how citizens could safely organize, educate communities about their rights, and support victims of abuse. Informal conversations became structured planning.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div class="tl-content">
+              <div class="tl-year">Early 2023</div>
+              <h4>Masina Organization Is Born</h4>
+              <p>The founders agreed Uganda needed an organization focused not only on exposing injustice, but also on rebuilding hope, empowering young people, and creating peaceful pathways for civic engagement. The name "Masina" symbolizes resilience, courage, and the determination of ordinary people to rise above fear and oppression.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><div class="tl-dot"></div></div>
+            <div class="tl-content">
+              <div class="tl-year">Today</div>
+              <h4>A Growing Movement</h4>
+              <p>Masina Organization continues to work alongside communities across Uganda to defend freedoms, challenge violence and intimidation, and inspire a generation that believes change is possible through peaceful action, solidarity, and truth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="page-section reveal" id="vision" style="background:none;padding-top:0;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">Our Direction</div>
+    <h2 class="section-title">Vision & <em>Mission</em></h2>
+    <div class="vm-grid" style="margin-top:2rem;">
+      <div class="vm-card vision">
+        <div class="vm-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        </div>
+        <h3>Our Vision</h3>
+        <p>A democratic, peaceful, and inclusive Uganda where all people can freely express themselves, participate in public life without fear, and enjoy equal protection of their human rights and freedoms.</p>
+      </div>
+      <div class="vm-card mission" id="mission">
+        <div class="vm-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+        </div>
+        <h3>Our Mission</h3>
+        <p>To promote freedom of expression, civic participation, human rights awareness, and social justice through advocacy, education, community engagement, research, digital activism, and peaceful civic action — supporting vulnerable communities and encouraging accountability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<div class="values-section reveal" id="values">
+  <div class="values-inner">
+    <div class="section-label">What Drives Us</div>
+    <h2 class="section-title" style="color:#fff;">Our Core <em style="color:var(--green-light);">Values</em></h2>
+    <div class="values-grid">
+      <div class="val-card"><div class="val-icon">🦁</div><h4>Courage</h4><p>We stand for truth and justice even in difficult environments where silence is pressured.</p></div>
+      <div class="val-card"><div class="val-icon">⚖️</div><h4>Integrity</h4><p>We believe in honesty, transparency, accountability, and ethical leadership in all we do.</p></div>
+      <div class="val-card"><div class="val-icon">✌️</div><h4>Nonviolence</h4><p>We promote peaceful advocacy, dialogue, and civic engagement as the path to change.</p></div>
+      <div class="val-card"><div class="val-icon">🤝</div><h4>Equality</h4><p>We believe every person deserves dignity, respect, and equal protection of rights.</p></div>
+      <div class="val-card"><div class="val-icon">🌱</div><h4>Community</h4><p>We value solidarity, collective action, and grassroots participation above all.</p></div>
+      <div class="val-card"><div class="val-icon">💡</div><h4>Empowerment</h4><p>We equip citizens with knowledge, confidence, and tools to defend their own rights.</p></div>
+      <div class="val-card"><div class="val-icon">🌟</div><h4>Hope</h4><p>We believe change is possible through unity, resilience, and sustained commitment.</p></div>
+      <div class="val-card" style="background:rgba(255,255,255,0.18);"><div class="val-icon">📣</div><h4>Voice</h4><p>We amplify the stories and experiences of those whose voices are ignored or silenced.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- GOALS -->
+<section class="page-section reveal" style="padding-top:80px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">What We're Working Toward</div>
+    <h2 class="section-title">Our <em>Strategic Goals</em></h2>
+    <div class="goals-grid">
+      <div class="goal-card"><div class="goal-num">01</div><div class="goal-text"><h4>Promote Freedom of Expression</h4><p>Protect the right of citizens, journalists, artists, students, and activists to speak freely without intimidation.</p></div></div>
+      <div class="goal-card"><div class="goal-num">02</div><div class="goal-text"><h4>Combat Police Brutality</h4><p>Document abuses, support victims, raise awareness, and advocate for accountability and humane policing.</p></div></div>
+      <div class="goal-card"><div class="goal-num">03</div><div class="goal-text"><h4>Empower Young People</h4><p>Equip youth with civic education, leadership skills, digital advocacy tools, and democratic participation opportunities.</p></div></div>
+      <div class="goal-card"><div class="goal-num">04</div><div class="goal-text"><h4>Strengthen Civic Engagement</h4><p>Encourage peaceful community participation in governance, policy discussions, elections, and social accountability.</p></div></div>
+      <div class="goal-card"><div class="goal-num">05</div><div class="goal-text"><h4>Support Human Rights Defenders</h4><p>Create safe spaces, mental wellness support, and solidarity networks for activists and community leaders.</p></div></div>
+      <div class="goal-card"><div class="goal-num">06</div><div class="goal-text"><h4>Promote Justice & Accountability</h4><p>Advocate for transparency, justice, and institutional reforms that protect human rights across Uganda.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://i.imgur.com/KwAnxWI.png" alt="Masina Organization" />
+        <p class="footer-motto">"Silence Cannot Build a Free Society."</p>
+        <p>Defending freedom of expression, human rights, and democratic participation across Uganda since 2023.</p>
+      </div>
+      <div class="footer-col"><h4>Organization</h4><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#vision">Our Vision</a></li><li><a href="about.html#mission">Our Mission</a></li><li><a href="about.html#values">Core Values</a></li></ul></div>
+      <div class="footer-col"><h4>Programs</h4><ul><li><a href="programs.html">All Programs</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Partners</a></li></ul></div>
+      <div class="footer-col"><h4>Get Involved</h4><ul><li><a href="donate.html">Donate</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">Report a Violation</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Masina Organization. All rights reserved.</span>
+      <span>Kampala, Uganda · <a href="mailto:info@masinaorganization.org">info@masinaorganization.org</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    const spans = hamburger.querySelectorAll('span');
+    if (isOpen) { spans[0].style.transform='rotate(45deg) translate(5px,5px)'; spans[1].style.opacity='0'; spans[2].style.transform='rotate(-45deg) translate(5px,-5px)'; }
+    else { spans.forEach(s => { s.style.transform=''; s.style.opacity=''; }); }
+  });
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);} }), {threshold:0.1});
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
