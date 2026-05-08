@@ -4,10 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>About Us – Masina Organization</title>
-<link rel="icon" href="https://i.imgur.com/KwAnxWI.png" />
-<meta property="og:image" content="https://i.imgur.com/KwAnxWI.png" />
+<link rel="icon" href="https://i.imgur.com/bS3vP0N.png" />
+<meta property="og:image" content="https://i.imgur.com/bS3vP0N.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
     --green: #1a7a3c; --green-mid: #25a355; --green-light: #3fcf78;
@@ -18,42 +19,46 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
+  body { font-family: 'Outfit', sans-serif; background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
 
+  /* NAV — matches index.html exactly */
   nav {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%; height: 70px;
-    background: rgba(255,255,255,0.72); backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--glass-border);
-    box-shadow: 0 2px 24px rgba(26,122,60,0.08);
+    padding: 0 5%; height: 80px;
+    background: rgba(255,255,255,0.88); backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(26,122,60,0.10);
+    box-shadow: 0 2px 24px rgba(26,122,60,0.07);
   }
-  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo img { height: 44px; }
-  .nav-logo span { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--green); font-weight: 700; }
+  .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-brand img { height: 72px; width: auto; }
+  .nav-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.22rem; font-weight: 700; color: var(--green); letter-spacing: -.01em; line-height: 1; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--text-dark); font-size: 0.92rem; font-weight: 500; position: relative; transition: color 0.25s; }
-  .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--green-light); border-radius: 2px; transition: width 0.3s; }
+  .nav-links a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 500; position: relative; transition: color .25s; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--green-light); border-radius: 2px; transition: width .3s; }
   .nav-links a:hover { color: var(--green); }
   .nav-links a:hover::after { width: 100%; }
-  .nav-cta { background: var(--green); color: #fff !important; padding: 8px 20px; border-radius: 30px; transition: background 0.25s !important; }
+  .nav-cta { background: var(--green) !important; color: #fff !important; padding: 8px 22px; border-radius: 30px; font-weight: 600 !important; box-shadow: 0 3px 14px rgba(26,122,60,0.28); }
   .nav-cta::after { display: none !important; }
-  .nav-cta:hover { background: var(--green-mid) !important; }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
-  .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--green); border-radius: 2px; transition: all 0.35s; }
-  .mobile-menu { display: none; position: fixed; top: 70px; left: 0; width: 100%; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); z-index: 999; padding: 1.5rem 5% 2rem; flex-direction: column; }
+  .nav-cta:hover { background: var(--green-mid) !important; transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; align-items: flex-start; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+  .hamburger span { display: block; height: 2.5px; background: var(--green); border-radius: 2px; transition: all .35s; }
+  .hamburger span:nth-child(1) { width: 26px; }
+  .hamburger span:nth-child(2) { width: 16px; }
+  .hamburger span:nth-child(3) { width: 26px; }
+  .mobile-menu { display: none; position: fixed; top: 80px; left: 0; width: 100%; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26,122,60,0.08); z-index: 999; padding: 1.5rem 5% 2rem; flex-direction: column; }
   .mobile-menu.open { display: flex; }
-  .mobile-menu-item { overflow: hidden; }
-  .mobile-menu-item a { display: block; padding: 0.75rem 0; text-decoration: none; color: var(--text-dark); font-size: 1.05rem; font-weight: 500; border-bottom: 1px solid #e8f4ec; transform: translateX(-40px); opacity: 0; transition: color 0.2s; }
-  .mobile-menu.open .mobile-menu-item a { animation: rollIn 0.45s forwards; }
-  .mobile-menu.open .mobile-menu-item:nth-child(1) a { animation-delay: 0.05s; }
-  .mobile-menu.open .mobile-menu-item:nth-child(2) a { animation-delay: 0.12s; }
-  .mobile-menu.open .mobile-menu-item:nth-child(3) a { animation-delay: 0.19s; }
-  .mobile-menu.open .mobile-menu-item:nth-child(4) a { animation-delay: 0.26s; }
-  .mobile-menu.open .mobile-menu-item:nth-child(5) a { animation-delay: 0.33s; }
-  .mobile-menu.open .mobile-menu-item:nth-child(6) a { animation-delay: 0.40s; }
-  .mobile-menu.open .mobile-menu-item:nth-child(7) a { animation-delay: 0.47s; }
+  .mobile-menu-item a { display: block; padding: .78rem 0; text-decoration: none; color: var(--text-dark); font-size: 1.05rem; font-weight: 500; border-bottom: 1px solid #e8f4ec; transform: translateX(-40px); opacity: 0; transition: color .2s; }
+  .mobile-menu.open .mobile-menu-item a { animation: rollIn .45s forwards; }
+  .mobile-menu.open .mobile-menu-item:nth-child(1) a { animation-delay: .05s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(2) a { animation-delay: .12s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(3) a { animation-delay: .19s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(4) a { animation-delay: .26s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(5) a { animation-delay: .33s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(6) a { animation-delay: .40s; }
+  .mobile-menu.open .mobile-menu-item:nth-child(7) a { animation-delay: .47s; }
+  .mobile-menu-item a:hover { color: var(--green); }
   @keyframes rollIn {
     0% { transform: translateX(-40px) rotateY(-20deg); opacity: 0; }
     60% { transform: translateX(6px) rotateY(2deg); opacity: 1; }
@@ -66,7 +71,7 @@
     display: flex; align-items: flex-end;
     position: relative; overflow: hidden;
     background: linear-gradient(160deg, #071510 0%, #1a7a3c 60%, #3fcf78 100%);
-    margin-top: 70px;
+    margin-top: 80px;
   }
   .hero-bg {
     position: absolute; inset: 0; pointer-events: none;
@@ -74,9 +79,7 @@
       radial-gradient(ellipse 70% 60% at 30% 30%, rgba(255,255,255,0.05) 0%, transparent 60%),
       radial-gradient(ellipse 40% 50% at 85% 70%, rgba(63,207,120,0.18) 0%, transparent 60%);
   }
-  .hero-lines {
-    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
-  }
+  .hero-lines { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .hero-lines svg { position: absolute; bottom: 0; left: 0; width: 100%; opacity: 0.08; }
   .hero-content {
     position: relative; z-index: 2;
@@ -85,28 +88,28 @@
   .hero-breadcrumb { color: rgba(255,255,255,0.55); font-size: 0.8rem; margin-bottom: 1rem; }
   .hero-breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
   .hero-breadcrumb span { color: var(--green-light); }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); color: #fff; font-weight: 900; line-height: 1.1; animation: fadeUp 0.9s 0.1s both; }
-  .hero-title em { color: var(--green-light); font-style: normal; }
-  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 520px; margin-top: 1rem; line-height: 1.7; animation: fadeUp 0.9s 0.3s both; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); color: #fff; font-weight: 700; line-height: 1.1; animation: fadeUp 0.9s 0.1s both; }
+  .hero-title em { color: var(--green-light); font-style: italic; }
+  .hero-sub { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 520px; margin-top: 1rem; line-height: 1.7; animation: fadeUp 0.9s 0.3s both; font-weight: 300; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
   /* CONTENT */
   .page-section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
-  .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.7rem; }
+  .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 0.7rem; }
   .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--green-light); border-radius: 2px; }
-  h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; margin-bottom: 1rem; }
-  h2.section-title em { color: var(--green); font-style: normal; }
+  h2.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.9rem); line-height: 1.18; margin-bottom: 1rem; font-weight: 700; }
+  h2.section-title em { color: var(--green); font-style: italic; }
 
   /* STORY */
   .story-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
-  .story-aside { position: sticky; top: 90px; }
+  .story-aside { position: sticky; top: 100px; }
   .story-aside-card {
     background: #fff; border-radius: 20px; padding: 2rem;
     border: 1px solid rgba(26,122,60,0.1); box-shadow: var(--shadow);
   }
   .story-aside-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 16px; margin-bottom: 1rem; }
-  .story-aside-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.5rem; }
-  .story-aside-card p { font-size: 0.85rem; color: #5a7a66; line-height: 1.7; }
+  .story-aside-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700; }
+  .story-aside-card p { font-size: 0.85rem; color: #5a7a66; line-height: 1.7; font-weight: 300; }
   .timeline { display: flex; flex-direction: column; gap: 0; }
   .tl-item { display: flex; gap: 2rem; padding-bottom: 2.5rem; position: relative; }
   .tl-item:last-child { padding-bottom: 0; }
@@ -114,17 +117,13 @@
   .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--green); border: 3px solid var(--green-pale); flex-shrink: 0; margin-top: 4px; }
   .tl-line { flex: 1; width: 2px; background: linear-gradient(to bottom, var(--green-light), var(--green-pale)); margin-top: 4px; }
   .tl-item:last-child .tl-line { display: none; }
-  .tl-content { }
-  .tl-year { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 0.4rem; }
-  .tl-content h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
-  .tl-content p { font-size: 0.9rem; color: #5a7a66; line-height: 1.75; }
+  .tl-year { font-size: 0.73rem; font-weight: 700; letter-spacing: 0.1em; color: var(--green); text-transform: uppercase; margin-bottom: 0.4rem; }
+  .tl-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700; }
+  .tl-content p { font-size: 0.9rem; color: #5a7a66; line-height: 1.75; font-weight: 300; }
 
   /* VISION/MISSION */
   .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .vm-card {
-    border-radius: 24px; padding: 2.5rem;
-    position: relative; overflow: hidden;
-  }
+  .vm-card { border-radius: 24px; padding: 2.5rem; position: relative; overflow: hidden; }
   .vm-card.vision { background: var(--green); color: #fff; }
   .vm-card.mission { background: #fff; border: 1px solid rgba(26,122,60,0.1); box-shadow: var(--shadow); }
   .vm-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
@@ -133,10 +132,10 @@
   .vm-icon svg { width: 28px; height: 28px; }
   .vm-card.vision .vm-icon svg { fill: #fff; }
   .vm-card.mission .vm-icon svg { fill: var(--green); }
-  .vm-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem; }
+  .vm-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700; }
   .vm-card.vision h3 { color: #fff; }
   .vm-card.mission h3 { color: var(--text-dark); }
-  .vm-card p { font-size: 0.95rem; line-height: 1.8; }
+  .vm-card p { font-size: 0.95rem; line-height: 1.8; font-weight: 300; }
   .vm-card.vision p { color: rgba(255,255,255,0.82); }
   .vm-card.mission p { color: #5a7a66; }
   .vm-card.vision::before { content: ''; position: absolute; right: -40px; bottom: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.07); }
@@ -156,8 +155,8 @@
   }
   .val-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-4px); }
   .val-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
-  .val-card h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; margin-bottom: 0.5rem; }
-  .val-card p { font-size: 0.83rem; color: rgba(255,255,255,0.72); line-height: 1.6; }
+  .val-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; font-weight: 700; }
+  .val-card p { font-size: 0.83rem; color: rgba(255,255,255,0.72); line-height: 1.6; font-weight: 300; }
 
   /* GOALS */
   .goals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
@@ -169,28 +168,31 @@
     transition: transform 0.3s, box-shadow 0.3s;
   }
   .goal-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(26,122,60,0.1); }
-  .goal-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--green-pale); line-height: 1; min-width: 44px; }
+  .goal-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--green-pale); line-height: 1; min-width: 44px; }
   .goal-text h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text-dark); }
-  .goal-text p { font-size: 0.85rem; color: #5a7a66; line-height: 1.65; }
+  .goal-text p { font-size: 0.85rem; color: #5a7a66; line-height: 1.65; font-weight: 300; }
 
   /* FOOTER */
-  footer { background: #071510; color: rgba(255,255,255,0.75); padding: 60px 5% 0; max-width: none; }
-  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  footer { position: relative; color: rgba(255,255,255,0.78); padding: 70px 5% 0; max-width: none; overflow: hidden; }
+  .footer-bg { position: absolute; inset: 0; z-index: 0; background: #071510; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
   .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .footer-brand img { height: 50px; margin-bottom: 1rem; }
-  .footer-motto { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--green-light); margin: 0.5rem 0 1rem; font-style: italic; }
-  .footer-brand p { font-size: 0.85rem; line-height: 1.75; color: rgba(255,255,255,0.55); }
-  .footer-col h4 { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; }
+  .footer-brand img { height: 104px; width: auto; margin-bottom: 1rem; }
+  .footer-motto { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--green-light); margin: 0.5rem 0 1rem; font-style: italic; }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.78; color: rgba(255,255,255,0.48); font-weight: 300; }
+  .footer-col h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-bottom: 1.2rem; }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-  .footer-col ul a { text-decoration: none; color: rgba(255,255,255,0.65); font-size: 0.88rem; transition: color 0.2s; }
+  .footer-col ul a { text-decoration: none; color: rgba(255,255,255,0.6); font-size: 0.87rem; transition: color 0.2s; font-weight: 300; }
   .footer-col ul a:hover { color: var(--green-light); }
-  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
-  .footer-bottom a { color: var(--green-light); text-decoration: none; }
+  .footer-bottom { padding: 24px 0; font-size: 0.78rem; }
+  .footer-bottom-email { margin-bottom: 8px; }
+  .footer-bottom-email a { color: var(--green-light); text-decoration: none; font-size: 0.82rem; }
+  .footer-bottom-copy { color: rgba(255,255,255,0.28); }
 
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
   .reveal.visible { opacity: 1; transform: none; }
 
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .story-grid { grid-template-columns: 1fr; }
@@ -209,9 +211,9 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="https://i.imgur.com/KwAnxWI.png" alt="Masina Organization" />
-    <span>Masina Organization</span>
+  <a href="index.html" class="nav-brand">
+    <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization" />
+    <span class="nav-brand-name">Masina Organization</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -254,7 +256,7 @@
     <div class="story-grid">
       <div class="story-aside">
         <div class="story-aside-card">
-          <img src="https://i.imgur.com/KwAnxWI.png" alt="Masina Logo" style="border-radius:12px;" />
+          <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Logo" style="border-radius:12px;" />
           <h3>Masina Organization</h3>
           <p>Founded 2023 in Kampala, Uganda. Non-partisan, independent, youth-led. Committed to peaceful civic action and human rights defense.</p>
           <div style="margin-top:1.2rem; display:flex; flex-direction:column; gap:0.7rem;">
@@ -349,13 +351,13 @@
     <div class="section-label">What Drives Us</div>
     <h2 class="section-title" style="color:#fff;">Our Core <em style="color:var(--green-light);">Values</em></h2>
     <div class="values-grid">
-      <div class="val-card"><div class="val-icon">🦁</div><h4>Courage</h4><p>We stand for truth and justice even in difficult environments where silence is pressured.</p></div>
-      <div class="val-card"><div class="val-icon">⚖️</div><h4>Integrity</h4><p>We believe in honesty, transparency, accountability, and ethical leadership in all we do.</p></div>
-      <div class="val-card"><div class="val-icon">✌️</div><h4>Nonviolence</h4><p>We promote peaceful advocacy, dialogue, and civic engagement as the path to change.</p></div>
-      <div class="val-card"><div class="val-icon">🤝</div><h4>Equality</h4><p>We believe every person deserves dignity, respect, and equal protection of rights.</p></div>
-      <div class="val-card"><div class="val-icon">🌱</div><h4>Community</h4><p>We value solidarity, collective action, and grassroots participation above all.</p></div>
-      <div class="val-card"><div class="val-icon">💡</div><h4>Empowerment</h4><p>We equip citizens with knowledge, confidence, and tools to defend their own rights.</p></div>
-      <div class="val-card"><div class="val-icon">🌟</div><h4>Hope</h4><p>We believe change is possible through unity, resilience, and sustained commitment.</p></div>
+      <div class="val-card"><div class="val-icon"></div><h4>Courage</h4><p>We stand for truth and justice even in difficult environments where silence is pressured.</p></div>
+      <div class="val-card"><div class="val-icon"></div><h4>Integrity</h4><p>We believe in honesty, transparency, accountability, and ethical leadership in all we do.</p></div>
+      <div class="val-card"><div class="val-icon"></div><h4>Nonviolence</h4><p>We promote peaceful advocacy, dialogue, and civic engagement as the path to change.</p></div>
+      <div class="val-card"><div class="val-icon"></div><h4>Equality</h4><p>We believe every person deserves dignity, respect, and equal protection of rights.</p></div>
+      <div class="val-card"><div class="val-icon"></div><h4>Community</h4><p>We value solidarity, collective action, and grassroots participation above all.</p></div>
+      <div class="val-card"><div class="val-icon"></div><h4>Empowerment</h4><p>We equip citizens with knowledge, confidence, and tools to defend their own rights.</p></div>
+      <div class="val-card"><div class="val-icon"></div><h4>Hope</h4><p>We believe change is possible through unity, resilience, and sustained commitment.</p></div>
       <div class="val-card" style="background:rgba(255,255,255,0.18);"><div class="val-icon">📣</div><h4>Voice</h4><p>We amplify the stories and experiences of those whose voices are ignored or silenced.</p></div>
     </div>
   </div>
@@ -379,10 +381,11 @@
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-bg"></div>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="https://i.imgur.com/KwAnxWI.png" alt="Masina Organization" />
+        <img src="https://i.imgur.com/bS3vP0N.png" alt="Masina Organization" />
         <p class="footer-motto">"Silence Cannot Build a Free Society."</p>
         <p>Defending freedom of expression, human rights, and democratic participation across Uganda since 2023.</p>
       </div>
@@ -391,8 +394,8 @@
       <div class="footer-col"><h4>Get Involved</h4><ul><li><a href="donate.html">Donate</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">Report a Violation</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Masina Organization. All rights reserved.</span>
-      <span>Kampala, Uganda · <a href="mailto:info@masinaorganization.org">info@masinaorganization.org</a></span>
+      <div class="footer-bottom-email"><a href="mailto:info@masinaorganization.org">info@masinaorganization.org</a></div>
+      <div class="footer-bottom-copy">© 2026 Masina Organization. All rights reserved. · Kampala, Uganda</div>
     </div>
   </div>
 </footer>
