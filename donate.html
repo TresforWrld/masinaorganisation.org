@@ -42,7 +42,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items
 @keyframes rollIn{0%{transform:translateX(-40px) rotateY(-20deg);opacity:0;}60%{transform:translateX(6px) rotateY(2deg);opacity:1;}100%{transform:translateX(0) rotateY(0);opacity:1;}}
 .mobile-menu-item a:hover{color:var(--green);}
 
-/* HERO – identical to index */
+/* HERO */
 .hero{position:relative;min-height:70vh;display:flex;align-items:center;margin-top:80px;overflow:hidden;}
 .hero-img{position:absolute;inset:0;background:url('https://i.imgur.com/faIrFFO.jpeg') center/cover no-repeat;z-index:0;}
 .hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,22,14,0.82) 0%,rgba(15,50,28,0.68) 50%,rgba(7,22,14,0.48) 100%);}
@@ -54,38 +54,39 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .55s both;}
 .btn-primary{background:#fff;color:var(--green);padding:13px 30px;border-radius:40px;font-weight:600;font-size:0.93rem;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block;}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.25);}
+.btn-secondary{background:var(--green);color:#fff;padding:13px 30px;border-radius:40px;font-weight:600;font-size:0.93rem;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s;display:inline-block;border:none;cursor:pointer;}
+.btn-secondary:hover{background:var(--green-mid);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.2);}
 .hero-wave{position:absolute;bottom:-2px;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;}
 .hero-wave svg{display:block;width:100%;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 
-/* Sections (shared with index) */
+/* Sections */
 section{padding:80px 5%;max-width:1400px;margin:0 auto;}
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:0.73rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:.8rem;}
 .section-label::before{content:'';display:block;width:24px;height:2px;background:var(--green-light);border-radius:2px;}
 h2.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,2.9rem);line-height:1.18;margin-bottom:1rem;font-weight:700;}
 h2.section-title em{color:var(--green);font-style:normal;}
 
-/* Impact cards (adapted from donate page but with index card style) */
+/* Impact cards – amounts removed */
 .impact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
 .impact-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid rgba(26,122,60,0.08);transition:transform .3s,box-shadow .3s;box-shadow:0 2px 12px rgba(26,122,60,0.06);}
 .impact-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,122,60,0.14);}
-.impact-card-top{background:linear-gradient(135deg,var(--green) 0%,var(--green-mid) 100%);margin:-2rem -2rem 1.5rem;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;border-radius:20px 20px 0 0;}
-.impact-amount{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:900;color:#fff;}
-.impact-icon{width:44px;height:44px;background:rgba(255,255,255,0.18);border-radius:12px;display:flex;align-items:center;justify-content:center;}
-.impact-icon svg{width:22px;height:22px;fill:#fff;}
-.impact-card h4{font-size:1rem;font-weight:600;margin-bottom:0.5rem;}
+.impact-card-top{background:linear-gradient(135deg,var(--green) 0%,var(--green-mid) 100%);margin:-2rem -2rem 1.5rem;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:flex-start;border-radius:20px 20px 0 0;}
+.impact-icon{width:48px;height:48px;background:rgba(255,255,255,0.18);border-radius:14px;display:flex;align-items:center;justify-content:center;}
+.impact-icon svg{width:26px;height:26px;fill:#fff;}
+.impact-card h4{font-size:1rem;font-weight:600;margin-bottom:0.5rem;margin-top:0.3rem;}
 .impact-card p{font-size:0.88rem;line-height:1.72;color:#5a7a66;font-weight:300;}
 .donate-tier-btn{display:inline-block;margin-top:1.2rem;background:var(--green-pale);color:var(--green);padding:8px 22px;border-radius:30px;font-size:0.82rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif;transition:background .2s,color .2s;}
 .donate-tier-btn:hover{background:var(--green);color:#fff;}
 
-/* Trust section (same as index but with different icons) */
+/* Trust section */
 .trust-section{background:var(--green);max-width:none;padding:60px 5%;}
 .trust-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;}
 .trust-item svg{width:36px;height:36px;fill:rgba(255,255,255,0.7);margin-bottom:0.8rem;}
 .trust-item strong{display:block;font-size:0.9rem;color:#fff;margin-bottom:4px;}
 .trust-item span{font-size:0.8rem;color:rgba(255,255,255,0.68);}
 
-/* Funds allocation (two‑column) */
+/* Funds allocation */
 .funds-section{padding:80px 5%;max-width:1400px;margin:0 auto;}
 .funds-wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .funds-visual{background:linear-gradient(135deg,var(--green-pale) 0%,#d4eedd 100%);border-radius:24px;padding:2.5rem;}
@@ -109,7 +110,7 @@ h2.section-title em{color:var(--green);font-style:normal;}
 .faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.2rem;}
 .faq-a p{font-size:0.88rem;color:#5a7a66;line-height:1.75;}
 
-/* Footer – identical to index */
+/* Footer */
 footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-width:none;overflow:hidden;}
 .footer-bg{position:absolute;inset:0;z-index:0;background:url('https://i.imgur.com/LgVCkJ1.jpeg') center/cover no-repeat;}
 .footer-bg::after{content:'';position:absolute;inset:0;background:rgba(5,14,9,0.88);}
@@ -141,7 +142,7 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
   .trust-inner{grid-template-columns:1fr;}
   .hero-title{font-size:2.4rem;}
   .hero-btns{flex-direction:column;gap:.75rem;}
-  .hero-btns a{text-align:center;}
+  .hero-btns a,.hero-btns button{text-align:center;}
 }
 </style>
 </head>
@@ -185,7 +186,7 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
       <p class="hero-sub">Your support helps us reach more communities, train youth leaders, and stand with those whose voices have been silenced. Every shilling counts.</p>
       <div class="hero-btns">
         <a href="#impact" class="btn-primary">See Your Impact</a>
-        <a href="contact.html" class="btn-outline" style="background:transparent;border:1.5px solid rgba(255,255,255,0.5);color:#fff;">Contact for Donation</a>
+        <button class="btn-secondary" onclick="showContactInfo()">Contact for Donation</button>
       </div>
     </div>
   </div>
@@ -196,38 +197,38 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
   </div>
 </section>
 
-<!-- IMPACT SECTION (from original donate page, restyled) -->
+<!-- IMPACT SECTION – amounts removed -->
 <section id="impact" class="reveal" style="max-width:1200px;margin:0 auto;padding:80px 5%;">
   <div class="section-label">Your Impact</div>
   <h2 class="section-title">What Your Support <em>Makes Possible</em></h2>
   <p style="color:#5a7a66;max-width:520px;font-size:0.96rem;line-height:1.75;margin-bottom:2rem;">Here's how your generosity translates directly into change across Uganda.</p>
   <div class="impact-cards">
+    <!-- Card 1 -->
     <div class="impact-card">
       <div class="impact-card-top">
-        <div class="impact-amount">UGX 20K</div>
         <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
       </div>
       <h4>Workshop Materials</h4>
       <p>Provides printed handouts, pens, and educational materials for a full community human rights workshop session.</p>
-      <button class="donate-tier-btn" onclick="showContactInfo()">Give UGX 20,000</button>
+      <button class="donate-tier-btn" onclick="showContactInfo()">Support This Work</button>
     </div>
+    <!-- Card 2 -->
     <div class="impact-card">
       <div class="impact-card-top">
-        <div class="impact-amount">UGX 50K</div>
         <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
       </div>
       <h4>Community Transport</h4>
       <p>Funds transport for two volunteers to reach a remote community for outreach and civic education sessions.</p>
-      <button class="donate-tier-btn" onclick="showContactInfo()">Give UGX 50,000</button>
+      <button class="donate-tier-btn" onclick="showContactInfo()">Support This Work</button>
     </div>
+    <!-- Card 3 -->
     <div class="impact-card">
       <div class="impact-card-top">
-        <div class="impact-amount">UGX 100K</div>
         <div class="impact-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
       </div>
       <h4>Victim Support</h4>
       <p>Helps cover referral costs and basic support for a survivor of police brutality or political intimidation.</p>
-      <button class="donate-tier-btn" onclick="showContactInfo()">Give UGX 100,000</button>
+      <button class="donate-tier-btn" onclick="showContactInfo()">Support This Work</button>
     </div>
   </div>
 </section>
@@ -271,26 +272,11 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
       </div>
     </div>
     <div class="funds-visual">
-      <div class="fund-bar-item">
-        <div class="fund-bar-label"><span>Community Programs & Workshops</span><strong>45%</strong></div>
-        <div class="fund-bar-track"><div class="fund-bar-fill" style="--w:45%;"></div></div>
-      </div>
-      <div class="fund-bar-item">
-        <div class="fund-bar-label"><span>Youth Empowerment & Training</span><strong>25%</strong></div>
-        <div class="fund-bar-track"><div class="fund-bar-fill" style="--w:25%;animation-delay:0.2s;"></div></div>
-      </div>
-      <div class="fund-bar-item">
-        <div class="fund-bar-label"><span>Victim Support & Referrals</span><strong>15%</strong></div>
-        <div class="fund-bar-track"><div class="fund-bar-fill" style="--w:15%;animation-delay:0.4s;"></div></div>
-      </div>
-      <div class="fund-bar-item">
-        <div class="fund-bar-label"><span>Campaigns & Advocacy</span><strong>10%</strong></div>
-        <div class="fund-bar-track"><div class="fund-bar-fill" style="--w:10%;animation-delay:0.6s;"></div></div>
-      </div>
-      <div class="fund-bar-item">
-        <div class="fund-bar-label"><span>Operations & Administration</span><strong>5%</strong></div>
-        <div class="fund-bar-track"><div class="fund-bar-fill" style="--w:5%;animation-delay:0.8s;"></div></div>
-      </div>
+      <div class="fund-bar-item"><div class="fund-bar-label"><span>Community Programs & Workshops</span><strong>45%</strong></div><div class="fund-bar-track"><div class="fund-bar-fill" style="--w:45%;"></div></div></div>
+      <div class="fund-bar-item"><div class="fund-bar-label"><span>Youth Empowerment & Training</span><strong>25%</strong></div><div class="fund-bar-track"><div class="fund-bar-fill" style="--w:25%;animation-delay:0.2s;"></div></div></div>
+      <div class="fund-bar-item"><div class="fund-bar-label"><span>Victim Support & Referrals</span><strong>15%</strong></div><div class="fund-bar-track"><div class="fund-bar-fill" style="--w:15%;animation-delay:0.4s;"></div></div></div>
+      <div class="fund-bar-item"><div class="fund-bar-label"><span>Campaigns & Advocacy</span><strong>10%</strong></div><div class="fund-bar-track"><div class="fund-bar-fill" style="--w:10%;animation-delay:0.6s;"></div></div></div>
+      <div class="fund-bar-item"><div class="fund-bar-label"><span>Operations & Administration</span><strong>5%</strong></div><div class="fund-bar-track"><div class="fund-bar-fill" style="--w:5%;animation-delay:0.8s;"></div></div></div>
     </div>
   </div>
 </section>
@@ -301,22 +287,10 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
     <div class="section-label">Common Questions</div>
     <h2 class="section-title">Donation <em>FAQ</em></h2>
     <div style="margin-top:2rem;">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">How do I donate? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        <div class="faq-a"><p>Contact us via email at info@masinaorganization.org or use the phone number listed on our contact page to arrange a donation. We will provide all banking details and a receipt upon contribution.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Can I donate from outside Uganda? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        <div class="faq-a"><p>Yes! We welcome international supporters. Please reach out to us directly at info@masinaorganization.org and we will coordinate international transfer arrangements.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Will I receive a donation receipt? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        <div class="faq-a"><p>Yes. Every donor receives a formal acknowledgment and receipt confirming their contribution and how it will be used within our programs.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Can I designate my donation to a specific program? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div>
-        <div class="faq-a"><p>Absolutely. You can direct your contribution to any of our five core programs — from youth civic leadership to mental wellness support. Just let us know when you reach out.</p></div>
-      </div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I donate? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div><div class="faq-a"><p>Contact us via email at info@masinaorganization.org or use the phone number listed on our contact page to arrange a donation. We will provide all banking details and a receipt upon contribution.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I donate from outside Uganda? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div><div class="faq-a"><p>Yes! We welcome international supporters. Please reach out to us directly at info@masinaorganization.org and we will coordinate international transfer arrangements.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Will I receive a donation receipt? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div><div class="faq-a"><p>Yes. Every donor receives a formal acknowledgment and receipt confirming their contribution and how it will be used within our programs.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I designate my donation to a specific program? <svg viewBox="0 0 24 24"><path d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></div><div class="faq-a"><p>Absolutely. You can direct your contribution to any of our five core programs — from youth civic leadership to mental wellness support. Just let us know when you reach out.</p></div></div>
     </div>
   </div>
 </div>
@@ -372,19 +346,21 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
     if(!wasOpen) item.classList.add('open');
   }
 
-  // Contact info popup for donation buttons
+  // Contact info popup (no emoji, clean SVG)
   function showContactInfo() {
     const msg = document.createElement('div');
-    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:24px;padding:2rem 2.5rem;text-align:center;box-shadow:0 25px 50px rgba(0,0,0,0.2);z-index:9999;font-family:Outfit,sans-serif;max-width:90%;width:360px;';
+    msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:28px;padding:2rem 2.5rem;text-align:center;box-shadow:0 25px 50px rgba(0,0,0,0.2);z-index:9999;font-family:Outfit,sans-serif;max-width:90%;width:380px;';
     msg.innerHTML = `
-      <div style="font-size:2rem;margin-bottom:0.5rem;">💚</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#0d2918;margin-bottom:0.75rem;">Thank you for your generosity</div>
+      <div style="width:60px;height:60px;background:var(--green-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem auto;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--green)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      </div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#0d2918;margin-bottom:0.75rem;">Thank you for your generosity</div>
       <div style="font-size:0.9rem;color:#5a7a66;margin-bottom:1.2rem;">To complete your donation, please contact us directly:</div>
-      <div style="background:#f5fbf7;padding:0.75rem;border-radius:14px;margin-bottom:1rem;">
+      <div style="background:#f5fbf7;padding:0.85rem;border-radius:16px;margin-bottom:1rem;">
         <a href="mailto:info@masinaorganization.org" style="color:#1a7a3c;font-weight:600;text-decoration:none;">info@masinaorganization.org</a><br/>
         <span style="font-size:0.8rem;">+256 (0) 123 456 789</span>
       </div>
-      <button onclick="this.parentNode.remove()" style="background:#1a7a3c;color:#fff;border:none;border-radius:40px;padding:10px 24px;font-family:Outfit;font-weight:600;cursor:pointer;margin-top:0.5rem;">Close</button>
+      <button onclick="this.parentNode.remove()" style="background:#1a7a3c;color:#fff;border:none;border-radius:40px;padding:10px 28px;font-family:Outfit;font-weight:600;cursor:pointer;margin-top:0.5rem;">Close</button>
     `;
     document.body.appendChild(msg);
     msg.style.animation = 'fadeUp 0.3s both';
