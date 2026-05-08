@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
 <title>Contact – Masina Organization</title>
 <meta name="description" content="Get in touch with Masina Organization. Partner, volunteer, report a violation, or learn more about our work in Uganda."/>
 <link rel="icon" href="https://i.imgur.com/bS3vP0N.png"/>
@@ -60,7 +60,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items
 .mobile-menu-item a:hover{color:var(--green);}
 @keyframes rollIn{0%{transform:translateX(-40px) rotateY(-20deg);opacity:0;}60%{transform:translateX(6px) rotateY(2deg);opacity:1;}100%{transform:translateX(0) rotateY(0);opacity:1;}}
 
-/* ── HERO (same structure as homepage) ── */
+/* ── HERO (same as homepage) ── */
 .hero{position:relative;min-height:65vh;display:flex;align-items:center;margin-top:80px;overflow:hidden;}
 .hero-img{position:absolute;inset:0;background:url('https://i.imgur.com/faIrFFO.jpeg') center/cover no-repeat;z-index:0;}
 .hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,22,14,0.86) 0%,rgba(15,50,28,0.72) 50%,rgba(7,22,14,0.52) 100%);}
@@ -131,7 +131,7 @@ h2.section-title em{color:var(--green);font-style:italic;}
 .submit-btn{width:100%;padding:14px;background:var(--green);color:#fff;border:none;border-radius:12px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;transition:background .25s,transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 18px rgba(26,122,60,0.28);}
 .submit-btn:hover{background:var(--green-mid);transform:translateY(-1px);box-shadow:0 8px 28px rgba(26,122,60,0.34);}
 .submit-btn svg{width:18px;height:18px;fill:#fff;}
-#formSuccess{display:none;background:var(--green-pale);border:1px solid rgba(26,122,60,0.2);border-radius:14px;padding:2rem;text-align:center;color:var(--green);font-weight:600;margin-top:1rem;}
+#formFeedback{display:none;background:var(--green-pale);border:1px solid rgba(26,122,60,0.2);border-radius:14px;padding:1.2rem;text-align:center;color:var(--green);font-weight:500;margin-top:1.5rem;font-size:0.9rem;}
 
 /* ── HOURS BANNER ── */
 .hours-banner{background:var(--green);max-width:none;padding:44px 5%;}
@@ -171,20 +171,26 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
 .footer-bottom-email a{color:var(--green-light);text-decoration:none;font-size:0.82rem;}
 .footer-bottom-copy{color:rgba(255,255,255,0.28);}
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE FIXES (improved mobile) ── */
 @media(max-width:960px){
   .nav-links{display:none;}
   .hamburger{display:flex;}
   .contact-wrap{grid-template-columns:1fr;gap:2.5rem;}
   .partners-grid{grid-template-columns:repeat(2,1fr);}
   .footer-top{grid-template-columns:1fr 1fr;gap:2rem;}
+  .hero{min-height:55vh;}
+  .hero-content{min-height:calc(55vh - 80px);}
 }
 @media(max-width:600px){
-  .partners-grid{grid-template-columns:1fr 1fr;}
+  .partners-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
   .hours-inner{flex-direction:column;align-items:flex-start;}
   .form-row{grid-template-columns:1fr;}
-  .hero{min-height:55vh;}
+  .hero-title{font-size:2.4rem;}
+  .contact-form-card{padding:1.8rem;}
+  .info-card{padding:1.2rem;}
+  .report-card{padding:1.5rem;}
+  .hero-sub{font-size:0.95rem;}
 }
 </style>
 </head>
@@ -290,38 +296,35 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
       <div class="report-card">
         <h3>Report a Human Rights Violation</h3>
         <p>If you or someone you know has experienced intimidation, unlawful arrest, or abuse of power — reach out. We provide safe and confidential support.</p>
-        <a href="mailto:info@masinaorganization.org?subject=Human Rights Violation Report" class="report-btn">Submit a Report</a>
+        <a href="mailto:info@masinaorganization.org?subject=Human%20Rights%20Violation%20Report" class="report-btn">Submit a Report</a>
       </div>
     </div>
 
-    <!-- RIGHT: FORM -->
+    <!-- RIGHT: FORM WITH MAILTO -->
     <div class="contact-form-card">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;margin-bottom:.5rem;font-weight:700;color:var(--text-dark);">Send Us a Message</h3>
       <p style="font-size:0.87rem;color:#5a7a66;margin-bottom:2rem;line-height:1.65;font-weight:300;">We respond to all messages within 1–3 business days.</p>
 
-      <div id="formSuccess">
-        <div style="font-size:2.2rem;margin-bottom:.6rem;">✅</div>
-        Your message has been sent! We'll be in touch shortly.
-      </div>
+      <div id="formFeedback"></div>
 
       <div id="formFields">
         <div class="form-row">
           <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="First name"/>
+            <label>First Name *</label>
+            <input type="text" id="firstName" placeholder="First name" required/>
           </div>
           <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Last name"/>
+            <label>Last Name *</label>
+            <input type="text" id="lastName" placeholder="Last name" required/>
           </div>
         </div>
         <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com"/>
+          <label>Email Address *</label>
+          <input type="email" id="userEmail" placeholder="your@email.com" required/>
         </div>
         <div class="form-group">
-          <label>Subject</label>
-          <select>
+          <label>Subject *</label>
+          <select id="subjectSelect" required>
             <option value="">Select a subject</option>
             <option>General Inquiry</option>
             <option>Partnership / Collaboration</option>
@@ -333,10 +336,10 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
           </select>
         </div>
         <div class="form-group">
-          <label>Your Message</label>
-          <textarea placeholder="Tell us how we can help or collaborate..."></textarea>
+          <label>Your Message *</label>
+          <textarea id="messageBody" placeholder="Tell us how we can help or collaborate..." required></textarea>
         </div>
-        <button class="submit-btn" onclick="submitContactForm()">
+        <button class="submit-btn" onclick="sendViaEmail()">
           <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
           Send Message
         </button>
@@ -389,43 +392,19 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
     <h2 class="section-title">Our <em>Partners & Collaborators</em></h2>
     <p style="color:#3a5a47;max-width:520px;line-height:1.78;font-size:0.95rem;margin-top:.5rem;font-weight:300;">Masina Organization values collaboration. Together we build a stronger movement for justice and freedom.</p>
     <div class="partners-grid">
-      <div class="partner-chip">
-        <div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
-        <span>Community-Based Organizations</span>
-      </div>
-      <div class="partner-chip">
-        <div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div>
-        <span>Youth Movements</span>
-      </div>
-      <div class="partner-chip">
-        <div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
-        <span>Human Rights Defenders</span>
-      </div>
-      <div class="partner-chip">
-        <div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
-        <span>Journalists & Media</span>
-      </div>
-      <div class="partner-chip">
-        <div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></div>
-        <span>Civic Education Networks</span>
-      </div>
-      <div class="partner-chip">
-        <div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-        <span>Legal Aid Organizations</span>
-      </div>
-      <div class="partner-chip">
-        <div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
-        <span>Peacebuilding Initiatives</span>
-      </div>
-      <div class="partner-chip">
-        <div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div>
-        <span>International Civil Society</span>
-      </div>
+      <div class="partner-chip"><div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div><span>Community-Based Organizations</span></div>
+      <div class="partner-chip"><div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></div><span>Youth Movements</span></div>
+      <div class="partner-chip"><div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div><span>Human Rights Defenders</span></div>
+      <div class="partner-chip"><div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div><span>Journalists & Media</span></div>
+      <div class="partner-chip"><div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></div><span>Civic Education Networks</span></div>
+      <div class="partner-chip"><div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><span>Legal Aid Organizations</span></div>
+      <div class="partner-chip"><div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div><span>Peacebuilding Initiatives</span></div>
+      <div class="partner-chip"><div class="partner-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></div><span>International Civil Society</span></div>
     </div>
   </div>
 </div>
 
-<!-- ── FOOTER (identical to homepage) ── -->
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-bg"></div>
   <div class="footer-inner">
@@ -437,27 +416,15 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
       </div>
       <div class="footer-col">
         <h4>Organization</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="about.html#vision">Our Vision</a></li>
-          <li><a href="about.html#mission">Our Mission</a></li>
-        </ul>
+        <ul><li><a href="about.html">About Us</a></li><li><a href="about.html#vision">Our Vision</a></li><li><a href="about.html#mission">Our Mission</a></li></ul>
       </div>
       <div class="footer-col">
         <h4>Programs</h4>
-        <ul>
-          <li><a href="programs.html">All Programs</a></li>
-          <li><a href="campaigns.html">Campaigns</a></li>
-          <li><a href="volunteer.html">Volunteer</a></li>
-        </ul>
+        <ul><li><a href="programs.html">All Programs</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="volunteer.html">Volunteer</a></li></ul>
       </div>
       <div class="footer-col">
         <h4>Get Involved</h4>
-        <ul>
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="volunteer.html">Volunteer</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
+        <ul><li><a href="donate.html">Donate</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Contact Us</a></li></ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -468,7 +435,7 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
 </footer>
 
 <script>
-  // Hamburger
+  // Hamburger menu
   const hbg = document.getElementById('hamburger');
   const mob = document.getElementById('mobileMenu');
   hbg.addEventListener('click', () => {
@@ -483,13 +450,48 @@ footer{position:relative;color:rgba(255,255,255,0.78);padding:70px 5% 0;max-widt
     }
   });
 
-  // Form submit
-  function submitContactForm() {
-    document.getElementById('formFields').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+  // Send email via mailto with prefilled fields
+  function sendViaEmail() {
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const userEmail = document.getElementById('userEmail').value.trim();
+    const subjectSelect = document.getElementById('subjectSelect').value;
+    const message = document.getElementById('messageBody').value.trim();
+    const feedbackDiv = document.getElementById('formFeedback');
+
+    // Simple validation
+    if (!firstName || !lastName || !userEmail || !subjectSelect || !message) {
+      feedbackDiv.style.display = 'block';
+      feedbackDiv.innerHTML = '!Please fill in all required fields (*).';
+      return;
+    }
+    if (!userEmail.includes('@') || !userEmail.includes('.')) {
+      feedbackDiv.style.display = 'block';
+      feedbackDiv.innerHTML = '!Please enter a valid email address.';
+      return;
+    }
+
+    // Build email body
+    const fullName = `${firstName} ${lastName}`;
+    const emailSubject = `${subjectSelect} – from ${fullName}`;
+    const emailBody = `Name: ${fullName}%0AEmail: ${userEmail}%0ASubject: ${subjectSelect}%0A%0AMessage:%0A${message}%0A%0A---%0ASent from Masina Organization contact form.`;
+
+    // Create mailto link
+    const mailtoLink = `mailto:info@masinaorganization.org?subject=${encodeURIComponent(emailSubject)}&body=${emailBody}`;
+
+    // Open default email client
+    window.location.href = mailtoLink;
+
+    // Show success message (non-intrusive)
+    feedbackDiv.style.display = 'block';
+    feedbackDiv.innerHTML = '!Opening your email app... Please send the message from there. Thank you!';
+    setTimeout(() => {
+      feedbackDiv.style.opacity = '0';
+      setTimeout(() => { feedbackDiv.style.display = 'none'; feedbackDiv.style.opacity = '1'; }, 800);
+    }, 5000);
   }
 
-  // Scroll reveals
+  // Reveal animations
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
   }), { threshold: .10 });
